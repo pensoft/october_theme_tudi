@@ -1,0 +1,61 @@
+title = "Press releases"
+url = "/media-center/press-releases"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[builderList mediaPressReleasesList]
+modelClass = "pensoft\Media\Models\Pressreleases"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<?php
+use Pensoft\Media\Models\Pressreleases;
+
+function onStart(){
+	$this['mediaPressreleasesList'] =  Pressreleases::get();
+}
+?>
+==
+<div class="container">
+	<a href="/media-center" class="back-to">&#10094; Back to Media center</a>
+	<h1 class="display-1">Press releases</h1>
+	<div class="row between-md">
+		{% set records = mediaPressreleasesList %}
+		{% set displayColumn = mediaPressreleasesList.displayColumn %}
+		{% set noRecordsMessage = mediaPressreleasesList.noRecordsMessage %}
+		{% set detailsPage = mediaPressreleasesList.detailsPage %}
+		{% set detailsKeyColumn = mediaPressreleasesList.detailsKeyColumn %}
+		{% set detailsUrlParameter = mediaPressreleasesList.detailsUrlParameter %}
+
+		{% for record in records %}
+		{# Use spaceless tag to remove spaces inside the A tag. #}
+		{% spaceless %}
+		<div class="col-xs">
+			<div class="card-container">
+				<span class="card_title">{{record.name}}, {{record.date |date('F Y')}}</span>
+				<div class="body">{{record.description | raw}}</div>
+				<div class="row link mt-3">
+					{% if record.link %}
+					<div class="col-xs-12"><a href="{{record.link}}" target="_blank">EurekAlert!</a></div>
+					{% endif %}
+					{% if record.link_cordis %}
+					<div class="col-xs-12"><a href="{{record.link_cordis}}" target="_blank">CORDIS Wire</a></div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+
+
+		{% endspaceless %}
+		{% else %}
+		{{ noRecordsMessage }}
+		{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,87 @@
+title = "Media center"
+url = "/media-center"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+use Pensoft\Media\Models\MediaLogos;
+use Pensoft\Media\Models\Flyers;
+use Pensoft\Media\Models\Newsletters;
+use Pensoft\Media\Models\Presentations;
+use Pensoft\Media\Models\Pressreleases;
+use Pensoft\Media\Models\Videos;
+
+function onStart(){
+	$this['logos'] =  MediaLogos::get();
+	$this['flyers'] =  Flyers::get();
+	$this['newsletters'] =  Newsletters::get();
+	$this['presentations'] =  Presentations::get();
+	$this['pressreleases'] =  Pressreleases::get();
+	$this['videos'] =  Videos::get();
+}
+?>
+==
+<div class="container">
+	<h1 class="display-1">Media center</h1>
+    <div class="row start-sm">
+		{% if logos.count() %}
+        <div class="col-xs">
+			<div class="card-container">
+				<span class="card_image_container" style="background: url({{'pensoft/logo-pack.svg'|media}}) center center no-repeat;height: 64px; width: 78px;" href="{{url('media-center')}}/logo" title="Logo"></span>
+				<span class="card_title">Logo pack</span>
+				<br><a href="{{url('media-center')}}/logo" title="Logo pack" class="btn btn-primary">Browse files</a>
+			</div>
+		</div>
+		{% endif %}
+		{% if flyers.count() %}
+		<div class="col-xs">
+			<div class="card-container">
+				<span class="card_image_container" style="background: url({{'pensoft/brochure.svg'|media}}) center center no-repeat;height: 64px; width: 78px;" href="{{url('media-center')}}/logo" title="Logo"></span>
+				<span class="card_title">Brochure and poster</span>
+				<br><a href="{{url('media-center')}}/flyer" title="Brochure and poster" class="btn btn-primary">Browse files</a>
+			</div>
+		</div>
+		{% endif %}
+		{% if newsletters.count() %}
+		<div class="col-xs">
+			<div class="card-container">
+				<span class="card_image_container" style="background: url({{'pensoft/newsletter.svg'|media}}) center center no-repeat;height: 64px; width: 78px;" href="{{url('media-center')}}/logo" title="Logo"></span>
+				<span class="card_title">Newsletters</span>
+				<br><a href="{{url('media-center')}}/newsletters" title="Newsletters" class="btn btn-primary">Browse files</a>
+			</div>
+		</div>
+		{% endif %}
+
+		{% if presentations.count() %}
+		<div class="col-xs">
+			<div class="card-container">
+				<span class="card_image_container" style="background: url({{'pensoft/newsletter.svg'|media}}) center center no-repeat;height: 64px; width: 78px;" href="{{url('media-center')}}/logo" title="Logo"></span>
+				<span class="card_title">Presentations</span>
+				<br><a href="{{url('media-center')}}/presentation" title="Presentations" class="btn btn-primary">Browse files</a>
+			</div>
+		</div>
+		{% endif %}
+		{% if pressreleases.count() %}
+		<div class="col-xs">
+			<div class="card-container">
+				<span class="card_image_container" style="background: url({{'pensoft/press-release.svg'|media}}) center center no-repeat;height: 64px; width: 78px;" href="{{url('media-center')}}/logo" title="Logo"></span>
+				<span class="card_title">Press releases</span>
+				<br><a href="{{url('media-center')}}/press-releases" title="Press releases" class="btn btn-primary">Browse files</a>
+			</div>
+		</div>
+		{% endif %}
+		{% if videos.count() %}
+		<div class="col-xs">
+			<div class="card-container">
+				<span class="card_image_container" style="background: url({{'pensoft/video.svg'|media}}) center center no-repeat; height: 64px; width: 78px;" href="{{url('media-center')}}/logo" title="Logo"></span>
+				<span class="card_title">Videos</span>
+				<br><a href="{{url('media-center')}}/videos" title="Videos" class="btn btn-primary">Browse files</a>
+			</div>
+		</div>
+		{% endif %}
+
+    </div>
+	<p>&nbsp;</p>
+</div>

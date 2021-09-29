@@ -1,0 +1,69 @@
+<div class="container-fluid border-box">
+    <div class="row between-xs top-xs">
+		<div class="col-xs-12 col-md-2">
+			<a class="promicon_white_logo" href="/">PROMICON</a><br>
+			<span>&copy;2021 powered by <a href="https://pensoft.net" target="_blank">Pensoft</a></span><br>
+			{% if (footer_funds_flag != null or footer_funds_text != '') %}
+				{% if footer_funds_flag %}
+				<img style="height:50px; margin: 18px 0; width: auto" src="{{ footer_funds_flag }}"/><br>
+				{% endif %}
+				{% if footer_funds_text %}
+				<span class="align-items-center mt-md-0 mt-1">{{footer_funds_text}}</span>
+				{%endif %}
+			{% endif %}
+		</div>
+		<div class="col-xs-6 col-md-1">
+			<ul>
+				<li><a href="{{'about'|page}}">About</a></li>
+				<li><a href="{{'partners'|page}}">Partners</a></li>
+				<li><a href="{{'library'|page}}">Library</a></li>
+				<li><a href="{{'news'|page}}">News</a></li>
+			</ul>
+		</div>
+		<div class="col-xs-6 col-md-1">
+			<ul>
+				<li><a href="{{'events'|page}}">Events</a></li>
+				<li><a href="{{'media-center'|page}}">Media center</a></li>
+				<li><a href="{{'contact'|page}}">Contacts</a></li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-md-1">
+			<ul>
+				<li><a href="{{'privacy-policy'|page}}">Privacy policy</a></li>
+
+			{% if (enable_social_media) %}
+			<li><div class="social-networks px-1 col-md-2 col-xs-12">
+				<div class="icons">
+					{% if enable_facebook and facebook_url %}
+					<a href="{{facebook_url}}" target="_blank" class="btn p-primary pr p-facebook " target="_blank" ></a>
+					{% endif %}
+					{% if enable_twitter and twitter_url %}
+					<a href="{{twitter_url}}" target="_blank" class="btn p-primary pr p-twitter" target="_blank" style="font-size: 35px;
+    margin-top: -9px;"></a>
+					{% endif %}
+					{% if enable_linkedin and linkedin_url %}
+					<a  href="{{linkedin_url}}" target="_blank" class="btn p-primary pr p-linkedin" target="_blank"></a>
+					{% endif %}
+					{% if enable_youtube and youtube_url %}
+					<a  href="{{youtube_url}}" target="_blank" class="btn p-primary pr p-youtube" target="_blank"></a>
+					{% endif %}
+					{% if enable_instagram and instagram_url %}
+					<a  href="{{instagram_url}}" target="_blank" class="btn p-primary pr p-instagram" target="_blank"></a>
+					{% endif %}
+					{% if enable_researchgate and researchgate_url %}
+					<a  href="{{researchgate_url}}" target="_blank" class="btn p-primary pr p-researchgate" target="_blank"></a>
+					{% endif %}
+				</div>
+			</div></li>
+			{% endif %}
+			</ul>
+		</div>
+		<div class="col-xs-12 col-md-2">
+			{%if this.theme.subscribe%}
+			Join our Newsletter:<br>
+			<a href="{{this.theme.subscribe}}" target="_blank" class="btn btn-primary">Subscribe now</a><br>
+			<span>By subscribing you agree to our <u><a href="/privacy-policy">Privacy policy</a></u>. You can unsubscribe at any time.</span>
+			{%endif%}
+		</div>
+    </div>
+</div>

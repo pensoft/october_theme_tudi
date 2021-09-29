@@ -1,0 +1,20 @@
+title = "Mails"
+url = "/mails"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[MailingForm]
+
+[session]
+security = "user"
+allowedUserGroups[] = "internal-users"
+allowedUserGroups[] = "registered"
+allowedUserGroups[] = "guest"
+redirect = "login"
+==
+<div class="container">
+	<h1 class="display-1">Mailing form</h1>
+    {% component 'MailingForm' %}
+</div>

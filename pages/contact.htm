@@ -1,0 +1,21 @@
+url = "/contact"
+layout = "default"
+title = "Contacts"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[profile_records]
+category = 1
+maxItems = 10
+==
+<div class="container">
+    <div class="row">
+		<div class="col-xs-12">
+			<h1 class="display-1">Contact</h1>
+			<div class="contact_info">
+				{% component 'profile_records' %}
+			</div>
+		</div>
+    </div>
+</div>

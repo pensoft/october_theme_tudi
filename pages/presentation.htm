@@ -1,0 +1,81 @@
+title = "Scientific posters"
+url = "/media-center/presentation"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[builderList mediaPresentationsList]
+modelClass = "pensoft\Media\Models\Presentations"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<?php
+use Pensoft\Media\Models\Presentations;
+use System\Models\File;
+use Redirect;
+
+function onStart(){
+	$this['mediaPresentatoinsList'] =  Presentations::get();
+	if(post('download')){
+		$file = File::find((int)post('download'));
+		$file_name = $file->getLocalPath();
+		$recordName = post('file_name') ? post('file_name') : 'PROMICON_presentation';
+		$ext= $file->getExtension();
+
+if (file_exists($file_name)) {
+header('Content-Description: File Transfer');
+header('Content-Type: application/octet-stream');
+header("Content-Type: application/force-download");
+header('Content-Disposition: attachment; filename='.$recordName .'.'. $ext);
+header('Content-Transfer-Encoding: binary');
+header('Expires: 0');
+header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+header('Pragma: public');
+header('Content-Length: ' . filesize($file_name));
+ob_clean();
+flush();
+readfile($file_name);
+exit();
+}
+return Redirect::to('/media-center/flyer');
+}
+}
+?>
+==
+<div class="container">
+	<div class="row">
+		{% set records = mediaPresentatoinsList %}
+		{% set displayColumn = mediaPresentatoinsList.displayColumn %}
+		{% set noRecordsMessage = mediaPresentatoinsList.noRecordsMessage %}
+		{% set detailsPage = mediaPresentatoinsList.detailsPage %}
+		{% set detailsKeyColumn = mediaPresentatoinsList.detailsKeyColumn %}
+		{% set detailsUrlParameter = mediaPresentatoinsList.detailsUrlParameter %}
+
+		{% for record in records %}
+		{# Use spaceless tag to remove spaces inside the A tag. #}
+		{% spaceless %}
+		{% if record.presentation_image %}
+		<div class="col-xs-12 col-lg-4">
+			<div class="story broshure_and_poster">
+				<p align="center"><a href="{{record.file.path}}" target="_blank"><img src="{{record.presentation_image.thumb(250,250,{'mode':'crop'})}}" title="{{record.name}}> </a></p>
+			</div>
+			{% if record.file %}
+			<div class="media-btn_broshure_and_poster"><a class="download btn btn-secondary fluid" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}" target="_blank">Download</a></div>
+
+			<div class="media-size">{{record.file.extension | uppercase}} {{record.file.size }}</div>
+			{% endif %}
+		</div>
+		{% endif %}
+
+		{% endspaceless %}
+		{% else %}
+		{{ noRecordsMessage }}
+		{% endfor %}
+	</div>
+</div>

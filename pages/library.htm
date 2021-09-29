@@ -1,0 +1,15 @@
+url = "/library"
+layout = "default"
+title = "Library"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[LibraryPage]
+templates = "template3"
+no_records_message = "PROMICON publications will be available soon"
+==
+<div class="container">
+    <h1 class="display-1">Library</h1>
+    {% component 'LibraryPage' %}
+</div>
