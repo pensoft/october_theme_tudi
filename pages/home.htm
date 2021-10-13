@@ -1,6 +1,6 @@
 url = "/"
 layout = "default"
-title = "PROMICON Homepage"
+title = "TUdi Homepage"
 is_hidden = 0
 meta_description = "homepage desc"
 seo_keywords = "keywords"
@@ -9,58 +9,55 @@ robot_follow = "follow"
 
 [article_highlights]
 maxItems = 3
-title = "Latest from the project"
 baseUrl = "/news"
 templates = "template3"
 thumb_width = 250
 thumb_height = 250
 
 [jumbotron]
-jumbotron = "harnessing-power-nature"
+jumbotron = "what-project-about"
 title = 1
 background = "transperant"
 templates = "template1"
 description_limit = 0
 
 [Timeline]
-limit = 4
+limit = 9
 upcoming = 0
+templates = "template2"
 ==
-<!-- latest from news -->
-<div class="container-fluid homepage-jumbotron-background">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-6">{% component 'jumbotron' %}</div>
-			<div class="col-xs-12 col-md-6"></div>
-		</div>		
-	</div>
 
-</div>
-<div class="container-fluid banner bg-secondary bacteria-background">
+<div class="soil-layers">{% component 'jumbotron' %}</div>
+<div class="soil-layers-wrapper"></div>
+<div class="container-fluid banner bacteria-background">
 	<div class="container">
+		<h1 class="display-1" style="margin-bottom:100px!important;">News</h1>
 		<div class="row">
+		
 			<div class="col-xs-12 col-md-6">
 				{% component 'article_highlights' %}
 				<p><a href="{{'news'|page}}" class="see_all_news">See all news</a></p>
 			</div>
-			<div class="col-xs-12 col-md-6 hide-in-mobile"><img src="{{'michael-longmire-L9EV3OogLh0-unsplash.jpg'|media|resize(634, 423, {'mode': 'crop'})}}" style="margin-top: 185px; border-radius: 5px;"> </div>
+			<div class="col-xs-12 col-md-6 hide-in-mobile"><img src="{{'tractor.jpg'|media|resize(634, 423, {'mode': 'crop'})}}"> </div>
 		</div>
 		<div class="highlighted-news-background"></div>		
 	</div>
 </div>
-<div class="container-fluid banner timeline-bacteria-background">
+<div class="timeline-background-top"></div>
+<div class="container-fluid banner timeline-background">
 	<div class="container">
 		<h2 class="project_timeline">Project timeline</h2>
 		{% component 'Timeline' %}
 	</div>
 </div>
+<div class="timeline-background-bottom"></div>
 <div class="container">
 	<h2 class="latest_updates">Follow latest updates</h2>
 	<!-- subscribes -->
 	<div class="row">
 		<div class="col-sm-8 col-xs-12">
 			<div class="twitter-widget">
-			    <a class="twitter-timeline" href="https://twitter.com/promiconh2020?ref_src=twsrc%5Etfw">Tweets by PROMICON</a>
+			    <a class="twitter-timeline" href="https://twitter.com/Project_TUdi?ref_src=twsrc%5Etfw">Tweets by TUdi</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</div>
@@ -91,7 +88,7 @@ upcoming = 0
 				<div class="subscribe-items d-flex justify-content-evenly flex-column">
 
 					{%if this.theme.subscribe%}
-					<a href="{{this.theme.subscribe}}" target="_blank" class="btn btn-primary">Subscribe for our newsletter</a>
+					<a href="{{this.theme.subscribe}}" target="_blank" class="btn btn-primary" style="padding: 0!important;">Subscribe for our newsletter</a>
 					{%endif%}
 
 					{%if this.theme.feedback%}

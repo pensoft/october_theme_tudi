@@ -63,6 +63,7 @@ return Redirect::to('/media-center/newsletters');
 		{% spaceless %}
 		{% if record.newsletter_image %}
 		<div class="col-xs">
+			<div class="card-container-top"></div>
 			<div class="card-container">
 				<span class="card_image_container" style="background: url({{record.newsletter_image.thumb(196,196,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
 				<span class="card_title" style="min-height: 100px;">{{record.name}}, {{record.date |date('F Y')}}, {{record.file.size}}</span>

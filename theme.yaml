@@ -96,6 +96,7 @@ form:
             header_image:
                 label: Header image
                 comment: Add new image, your theme recomends a header size of 1600 x 200
+                fileTypes: 'png, svg, jpg, jpeg'
                 type: fileupload
                 mode: image
                 imageWidth: 400
@@ -265,10 +266,11 @@ form:
                 options:
                     roboto: Roboto
                     muli: Muli
-                    helvetica: Helvetica
+                    ptsanspro: PT-Sans-Pro
                     sofia: Sofia-Pro
                     oswald: Oswald
                     poppins: Poppins
+
             background:
                 label: Background color
                 comment: Select a custom color to use as background

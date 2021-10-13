@@ -17,11 +17,21 @@ var documentHasScroll = function() {
 
 
 $(document).ready(function() {
-	var headerNavbar = $('#headerNavbar');
-	var width100 = $('.width100');
-	var innerWidth = $('body').innerWidth();
-	headerNavbar.width(innerWidth);
-	width100.width(innerWidth);
+	/* MENU */
+	$('.navbar-nav').attr('id', 'menu'); // please don't remove this line
+	$( '<div class="calendar-top"></div>' ).insertBefore( "#calendar" );
+	$( '<div class="card-profile-top"></div>' ).insertBefore( ".card.profile.card-profile" );
+		var divs = $(".card-profiles > div");
+		for(var i = 0; i < divs.length; i+=2) {
+			divs.slice(i, i+2).wrapAll( '<div class="col-xs" />');
+		}
+
+
+	// var headerNavbar = $('#headerNavbar');
+	// var width100 = $('.width100');
+	// var innerWidth = $('body').innerWidth();
+	// headerNavbar.width(innerWidth);
+	// width100.width(innerWidth);
 
 
 	$('body').on('click', '.work_packages .accordion-toggle', function () {
@@ -116,8 +126,8 @@ function init() {
         } else {
             if (typeof cardCarousel === 'function') { 
                 cardCarousel({
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     autoplay: true,
                     autoplaySpeed: 6000,
                     prevArrow: '<i class="slick-prev pr p-back"/>',
@@ -132,8 +142,8 @@ function init() {
         if (!isBreakpointLarge()) {
             if (typeof cardCarousel === 'function') { 
                 cardCarousel({
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     autoplay: true,
                     autoplaySpeed: 6000,
                     prevArrow: '<i class="slick-prev pr p-back"/>',

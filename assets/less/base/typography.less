@@ -1,5 +1,4 @@
 @import "fonts/@{font-family}.less";
-@import "fonts/poppins.less";
 
 .font-size(@ratio: 1) {
     & when (@font-size > 0px) {
@@ -54,7 +53,6 @@ h6,.h6 {
 h1,.h1, h2,.h2, h3,.h3, h4,.h4, h5,.h5, h6,.h6,.title {
     margin-bottom: @margin-base-space;
     color: @heading-text-color;
-    font-family: "Poppins";
     &.underline {
 
         display: inline-block;
@@ -76,37 +74,22 @@ h1,.h1, h2,.h2, h3,.h3, h4,.h4, h5,.h5, h6,.h6,.title {
       margin-bottom: 0;
       text-align: left;
       color: @heading-text-color;
-      font-family: "Poppins";
       &.inner-page{
         margin-bottom: @margin-base-space!important;
       }
       &.highlight_new_template_3{
-        color: @white-color;
-        font-size: 35px;
+        //background: url(../../assets/images/Bacteria/desktop-bacteria-02.svg) top right no-repeat;
+        font-size: 40px;
         font-weight: 600;
-        background: url(../../assets/images/Bacteria/desktop-bacteria-02.svg) top right no-repeat;
         background-size: contain;
-        width: 348px;
-        padding-right: 136px;
+        /* width: 348px; */
+        /* padding-right: 136px; */
         padding-top: 129px;
-        position: absolute;
+        /* position: absolute; */
         margin-top: -147px;
-        line-height: 44px;
-        .breakpoint-small-down({
-          color: #ffffff;
-          font-size: 35px;
-          font-weight: 600;
-          background: url(../../assets/images/Bacteria/mobile-bacteria-02.svg) top left no-repeat;
-          background-size: 85%;
-          width: unset;
-          margin-left: -16px;
-          padding-left: 16px;
-          padding-right: 0;
-          padding-top: 138px;
-          position: absolute;
-          margin-top: -189px;
-          line-height: 44px;
-        });
+        line-height: 48px;
+        text-align: center;
+
       }
     }
 }

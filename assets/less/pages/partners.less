@@ -1,41 +1,67 @@
+.partners{
+  .list-item-body{
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .list-item-image{
+    margin: 0 auto;
+  }
+
+  .list-item{
+    &.align-items-start{
+      align-items: center!important;
+    }
+  }
+}
+
+
 .pr.normal{
   margin-top: -2px;
 }
 
-ul.partners_logos_list{
-  list-style-type: none;
-  padding: 0px;
-  margin: 0;
-  display: block;
-}
-ul.partners_logos_list li{
-  display: inline-flex;
+ul.partners-countries-list {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 40px;
+  padding-left: 0;
   text-align: center;
-  vertical-align: middle;
-  margin: 17px 17px 0 0;
-  background: @secondary-color;
-  border-radius: 50%;
-  padding: 20px;
-  .breakpoint-small-down({
-    margin: 17px 4px 0 4px;
-  });
 
+  li {
+    padding-left: 6px;
+    /* text-indent: -1em; */
+    display: inline;
+
+    a{
+      color: #212121;
+      font-size: 20px;
+      cursor: pointer;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+
+  li:before {
+    content: " | ";
+    padding-right: 5px;
+  }
+
+  li:first-child:before {
+    content: "";
+    padding-right: 5px;
+  }
+
+  .partner_cover{
+
+  }
+}
+
+.partners-container{
+  padding-top: 0!important;
 }
 
 
-ul.partners_logos_list li {
-  margin-top: 1rem;
-  transition: all .3s ease-in-out;
-}
-
-ul.partners_logos_list li:hover{
-  margin-top: 0;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.partner_cover{
-
-}
 
 .partner_cover.width{
   height: 119px;
@@ -48,6 +74,16 @@ ul.partners_logos_list li:hover{
   height: 119px;
   width: 119px;
   line-height: 185px!important;
+}
+
+#mycomponentpartners{
+  .list{
+    width: 100%;
+    background-color: transparent;
+    .list-item{
+      text-align: center;
+    }
+  }
 }
 
 .fill_default.fill_ES:hover,

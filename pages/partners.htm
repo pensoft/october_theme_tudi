@@ -7,7 +7,7 @@ robot_follow = "follow"
 
 [PartnersPage]
 limit = 0
-templates = "template4"
+templates = "template6"
 ==
 <div class="container">
 	<h1 class="display-1">Partners</h1>
@@ -17,11 +17,10 @@ templates = "template4"
 		</div>
 	</div>
 
-{% component 'PartnersPage' %}
 
 <div class="container-fluid banner">
-	<div class="container advisory-board-container2">
-		
+	<div class="container partners-container">
+		{% component 'PartnersPage' %}
 	</div>
 </div>
 

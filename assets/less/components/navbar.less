@@ -13,8 +13,12 @@
     -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    width: 100%;
+
+
+    .width100{
+      width: 100%;
+    }
 
     &:not(.fixed){
         background-color: @navbar-bkg-color;
@@ -22,10 +26,6 @@
 
     a {
         color: @navbar-font-color;
-        font-weight: 600;
-        .breakpoint-small-down({
-          font-weight: 400;
-        });
 
     }
 
@@ -45,19 +45,18 @@
     .navbar-brand {
       display: flex;
       //flex-basis: 292px;
-      height: 44px;
+      min-height: 60px;
       background-size: 500px;
       background-repeat: no-repeat;
       background-position: -105px -135px;
       .breakpoint-laptop-down({
-        height: 77px;
-        background-size: 200px!important;
-        background-position: 35px 17px!important;
+        //height: 77px;
+        //background-size: 200px!important;
+        //background-position: 35px 17px!important;
       });
       .breakpoint-small-down({
-        height: 44px;
-        background-size: 480px;
-        background-position: 20px 1px!important;
+        //background-size: 480px;
+        //background-position: 20px 1px!important;
       });
     }
 
@@ -305,8 +304,8 @@ div.search{
     width: 100vw;
     height: calc(100vh - 7px);
     //margin: -22px 0 0 -100vw;
-    margin: -22px -22px 0 0;
-    padding: 49px 0 0 85px;
+    margin: -38px -22px 0 0;
+    padding: 80px 0 0 85px;
     background-color: @default-color;
     color: @white-color!important;
     font-size: 28px!important;

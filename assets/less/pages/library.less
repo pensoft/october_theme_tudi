@@ -1,13 +1,31 @@
+.library{
+  .row.center-xs.mb-1{
+    display: none;
+  }
+}
+
+.library-item-top{
+  background: url('../../assets/images/pattern-long.svg') bottom left repeat-x;
+  height: 38px;
+  margin-top: 40px;
+}
+
 .library-item{
   background: @white-color;
-  -moz-box-shadow: 0 0 20px #0000001A;
-  -webkit-box-shadow: 0 0 20px #0000001A;
-  box-shadow: 0 0 20px #0000001A;
+  -moz-box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
   padding: 20px!important;
-  margin: 20px 0!important;
+
   color: @default-color!important;
   font-size: 16px;
-  border-radius: 5px;
+  position: relative;
+
+  display: block;
+  .breakpoint-small-down({
+    height: auto;
+  });
+  
 
   h3{
     font-weight: bold;
@@ -26,5 +44,10 @@
 
   .text-ligth{
     color: @default-color!important;
+  }
+
+  .bg-download-btn{
+    //background: #412e19 url("../../assets/images/download.svg") right center no-repeat;
+    background: #412e19;
   }
 }

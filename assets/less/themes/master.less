@@ -11,10 +11,13 @@ html,body {
 }
 
 .content-wrapper {
-  min-height: calc(100vh - 547px);
+  min-height: 60vh;
   .breakpoint-small-down({
     min-height: 100%;
   });
+  &.about{
+    background: @white-color!important;
+  }
 }
 
 a {
@@ -32,136 +35,168 @@ ul{
 ol.q {list-style-type: upper-roman; padding-left: 20px;}
 
 
-
 .header-image {
-    overflow: hidden;
+  overflow: hidden;
+  position: relative;
+  //align-items: center;
+  justify-content: center;
+  display: flex;
+  color: @white-color;
+  //background: url('../../assets/images/EU-Pollinators-Initiative-other.jpg');
+  height: 438px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-position: center 88px;
+  //background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+
+  .breakpoint-laptop-down({
+    height: 318px;
+  });
+  .breakpoint-small-down({
+    //background: url('../../assets/images/EU-Pollinators-Initiative-other.jpg') no-repeat;
+    height: 111px;
+    background-position: 24% top;
+    //background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    z-index: 55;
+  });
+
+  &.home {
+    /* Full height */
+    //background: url('../../assets/images/header-home-bg-new.svg');
+    background: url('../../assets/images/homepage-visual.png');
+    //background: #BDE1CA;
+    /* Full height */
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    /* Center and scale the image nicely */
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
-    align-items: flex-end;
-    justify-content: center;
-    display: flex;
-    color: @white-color;
 
-    .header-image-bar {
-        width: 100%;
-        height: 424px;
-        background-size: cover;
-        background-position: center;
-        background-position-y: 31px!important;
-
-        .breakpoint-small-down({
-          background: url("../../../../storage/app/media/mobile-image.png")!important;
-          background-size: 100%!important;
-          background-position: center!important;
-          background-position-y: 80px!important;
-        });
-        .breakpoint-laptop-down({
-          height: 560px;
-        });
-
-    }
-
-    h1 {
-        &.underline {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-bottom: 50px;
-            margin-bottom: 0;
-            font-size: 52px;
-            line-height: 52px;
-            color: @white-color;
-            //width: 1146px;
-            text-align: center;
-            &.home-page-header{
-              text-transform: unset;
-              font-size: 52px;
-              line-height: 62px;
-              .breakpoint-small-down({
-                  font-size: 33px;
-                  line-height: 56px;
-              });
-              .breakpoint-huge-down({
-                width: auto!important;
-              });
-            }
-          .breakpoint-small-down({
-              width: 85%;
-              padding-left: 20px;
-              padding-right: 20px;
-              padding-bottom: 35px;
-              line-height: 47px!important;
-          });
-        }
-    }
-
-    .jumbotron{
-      font-size: 1.5em;
-      
-      .breakpoint-small-down({
-          font-size: 1.3em;
-      });
-    }
+    .breakpoint-small-down({
+      //background: url('../../assets/images/EU-Pollinators-Initiative-mobile.jpg');
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-size: cover;
+    });
 
 
-
-
-    &.home {
-        .header-image-bar {
-            height: 691px;
-            .breakpoint-laptop-down({
-              height: 560px;
-            });
-        }
         h1 {
             &.underline {
-                border-bottom: none;
+                padding-top: 8%!important;
+                margin-bottom: 0;
+                font-size: 40px;
+                line-height: 48px;
+                color: @header-text-color;
+                max-width: 55%;
+              text-align: center;
+                //text-align: center;
+                &.home-page-header{
+                  text-transform: unset;
+                  font-size: 52px;
+                  line-height: 62px;
+                  .breakpoint-small-down({
+                      font-size: 33px;
+                      line-height: 56px;
+                  });
+                  .breakpoint-huge-down({
+                    width: auto!important;
+                  });
+                }
+              p + p{
+                margin-top: 40px;
+              }
+              .breakpoint-small-down({
+                padding-top: 115px !important;
+                margin-bottom: 0;
+                font-size: 29px;
+                line-height: 48px;
+                color: #212121;
+                max-width: 100%;
+                text-align: center;
+              });
             }
         }
+
+  }
+
+
+  .breakpoint-large({
+    &> img {
+      width: 100%;
+      max-width: 100%;
     }
-
-    .breakpoint-large({
-        &> img {
-            width: 100%;
-            max-width: 100%;
-        }
-    });
+  });
 }
 
-#layout-content {
-    padding-top: @padding-base-space * 0;
-    padding-bottom: @padding-base-space * 0;
-    margin-top: 78px;
-
-    .breakpoint-small-down ({
-      margin-top: 64px;
-        .slick-next, .slick-prev {
-            display: none !important;
-        }
-    })
+.soil-layers-wrapper{ //#412E19
+  background:  url('../../assets/images/pattern-brown.svg') top left repeat-x;
+  height: 38px;
+}
+.soil-layers{
+  background: #412E19 url('../../assets/images/header-home-earth-pattern.svg') top left repeat-x;
+  color: @white-color!important;
+  text-align: center;
+  padding-top: 8%;
+  p{
+    color: @white-color!important;
+  }
+  h1.display-1 {
+    font-size: 40px;
+    line-height: 48px;
+    color: @white-color!important;
+  }
 }
 
-//footer{
-//  height: 239px;
-//  margin-top: -39px;
-//  .breakpoint-small-down({
-//    height: auto;
-//  });
-//}
+.timeline-background{
+  background: #BDE1CA;
+}
+.timeline-background-top{
+  background:  url('../../assets/images/pattern-green.svg') top left repeat-x;
+  height: 38px;
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  filter: FlipV;
+  -ms-filter: "FlipV";
+}
+.timeline-background-bottom{
+  background:  url('../../assets/images/pattern-green.svg') top left repeat-x;
+  height: 38px;
+}
+
+
+.footer-bg-wrapper{ //#412E19
+  background:  url('../../assets/images/pattern-dark.svg') top left repeat-x;
+  height: 38px;
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  filter: FlipV;
+  -ms-filter: "FlipV";
+}
 
 #layout-footer {
     padding-top: 71px;
-    padding-bottom: 237px;
+    padding-bottom: 71px;
     z-index: 100;
     background: @footer-color url(../../assets/images/Bacteria/desktop-bacteria-06.svg) bottom right no-repeat;
     background-size: 29% 34%;
     color: @white-color;
     line-height: 1.2em!important;
-
-  .breakpoint-small-down({
-    padding-top: 71px;
-    padding-bottom: 171px;
-    background: @footer-color url(../../assets/images/Bacteria/desktop-bacteria-06.svg) bottom right no-repeat;
-    background-size: 76%;
-  });
 
     .container-fluid{
       padding-left: 1rem;
@@ -199,7 +234,7 @@ ol.q {list-style-type: upper-roman; padding-left: 20px;}
     }
 
     .promicon_white_logo{
-        background: @footer-color url(../../assets/images/promicon-logo-white.svg) left no-repeat;
+        background: @footer-color url(../../assets/images/logo-white.svg) left no-repeat;
         color: transparent;
         display: block;
         width: 100%;
@@ -209,6 +244,8 @@ ol.q {list-style-type: upper-roman; padding-left: 20px;}
     }
     .btn-primary{
       margin: 18px 0;
+      background: @white-color;
+      color: @main-color;
     }
 
     .btn{
@@ -283,7 +320,7 @@ ol.q {list-style-type: upper-roman; padding-left: 20px;}
     -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    
 }
 
 .subscribe-container {
@@ -301,12 +338,16 @@ ol.q {list-style-type: upper-roman; padding-left: 20px;}
       -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
       padding: 2px;
       margin: 0 0 20px 0;
+      height: 70px;
+      line-height: 70px;
       .breakpoint-small-down({
         margin: 20px 10px;
       });
+      &.pr{
+        background: @white-color;
+      }
     }
   .btn-primary{
     padding: 18px;
@@ -394,7 +435,6 @@ ol.q {list-style-type: upper-roman; padding-left: 20px;}
 }
 
 .homepage_intro .cards h2{
-  font-family: Poppins;
 }
 
 .project_background{
@@ -452,42 +492,79 @@ footer .align-items-center{
 
 
 h1.display-1{
-  font-size: 57px;
-  line-height: 70px;
-  font-weight: 600;
-  margin-bottom: 100px;
-  margin-top: 50px;
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 80px;
+  margin-top: 90px;
+  text-align: center;
 
   .breakpoint-small-down({
-    font-size: 57px;
-    line-height: 70px;
-    font-weight: 600;
     margin-bottom: 50px;
     margin-top: 0px;
   });
+
+  &.brown{
+     color: #3A2A15!important;
+   }
+  &.dark{
+    color: #212121!important;
+  }
 }
 
+
+
+.container{
+
+  h1.display-1{
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 50px;
+    margin-top: 100px;
+    text-align: center;
+    color: @header-text-color;
+
+    .breakpoint-small-down({
+      margin-bottom: 50px;
+      margin-top: 0px;
+    });
+  }
+}
+.bacteria-background{
+
+}
 h2{
   font-size: 35px;
-  font-weight: 600;
   line-height: 45px;
   margin-bottom: 20px;
   &.latest_updates{
-    width: 250px;
-
-    .breakpoint-small-down({
-      margin-left: 20px;
-    });
+    margin-bottom: 57px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 48px;
 
   }
 }
 
 
 .no-records{
-  background: url("../../assets/images/promicon-logo.svg") bottom left no-repeat;
-  background-size: 30%;
-  padding-bottom: 100px;
+  background: url("../../assets/images/tree.svg") bottom right no-repeat;
+  background-size: 243px;
+  padding-bottom: 586px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: -75px;
   .breakpoint-small-down({
     background-size: 100%;
   });
+}
+
+.hide-in-mobile{
+  .breakpoint-small-down({
+    display: none;
+  });
+}
+
+.edit-link{
+  color: red!important;
 }

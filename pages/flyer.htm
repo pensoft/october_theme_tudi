@@ -64,6 +64,7 @@ function onStart(){
 	{% spaceless %}
 	{% if record.flyer_image %}
 		<div class="col-xs">
+			<div class="card-container-top"></div>
 			<div class="card-container">
 				<span class="card_image_container" style="background: url({{record.flyer_image.thumb(196,196,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
 				<span class="card_title">{{record.name}}, {{record.file.size}}</span>

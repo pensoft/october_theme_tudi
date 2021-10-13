@@ -22,6 +22,7 @@
     });
     &.highlights-news{
         padding-bottom: unset;
+      padding-top: unset!important;
     }
 }
 
@@ -86,37 +87,37 @@
 
 
 .about{
-  .container-fluid{
-    background: url(../../assets/images/Bacteria/mobile-bacteria-06.svg) right no-repeat;
-    background-size: 26%;
-    background-position-y: 66px;
-    .breakpoint-small-down({
-      background-size: 37%;
-      background-position-y: 108px;
-    });
-    .container p{
-      width: 80%;
-      .breakpoint-small-down({
-        width: 100%;
-      });
+  .sub-about{
+    h1, h2{
+      font-size: 34px!important;
+      text-align: center;
+      max-width: 100%;
+      width: -webkit-fill-available;
+    }
+    ul, ol{
+      list-style: unset!important;
+      padding-left: 20px;
+      li{
+        display: list-item;
+        margin: 5px 0;
+      }
     }
   }
-
-  .container{
-    .breakpoint-small-down({
-      margin: 0 1rem;
-      width: 90%;
-    });
-  }
-
-  .work_packages{
-    .container{
-      .breakpoint-small-down({
-        margin: 0 0.5rem;
-        width: 95%;
-      });
-    }
-  }
+  //.container{
+  //  .breakpoint-small-down({
+  //    margin: 0 1rem;
+  //    width: 90%;
+  //  });
+  //}
+  //
+  //.work_packages{
+  //  .container{
+  //    .breakpoint-small-down({
+  //      margin: 0 0.5rem;
+  //      width: 95%;
+  //    });
+  //  }
+  //}
 }
 
 .insider{

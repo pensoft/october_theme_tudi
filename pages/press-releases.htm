@@ -38,16 +38,15 @@ function onStart(){
 		{# Use spaceless tag to remove spaces inside the A tag. #}
 		{% spaceless %}
 		<div class="col-xs">
+			<div class="card-container-top"></div>
 			<div class="card-container">
 				<span class="card_title">{{record.name}}, {{record.date |date('F Y')}}</span>
 				<div class="body">{{record.description | raw}}</div>
 				<div class="row link mt-3">
-					{% if record.link %}
-					<div class="col-xs-12"><a href="{{record.link}}" target="_blank">EurekAlert!</a></div>
-					{% endif %}
-					{% if record.link_cordis %}
-					<div class="col-xs-12"><a href="{{record.link_cordis}}" target="_blank">CORDIS Wire</a></div>
-					{% endif %}
+					{% for link in record.link %}
+					<div class="col-xs-12"><a href="{{link.url}}" target="_blank">{{link.text}}</a></div>
+					{% endfor %}
+
 				</div>
 			</div>
 		</div>

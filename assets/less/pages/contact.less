@@ -4,20 +4,23 @@
     width: 100%;
     .cards{
       justify-content: flex-start!important;
+      display: inline-flex!important;
+    }
+    .card-profile-top{
+      background: url('../../assets/images/pattern-short.svg') bottom left repeat-x;
+      height: 38px;
+      margin-top: 40px;
     }
    .card{
-     border: none;
-     border-radius: 5px;
-     padding: 20px!important;
-     margin: 20px 0!important;
-     font-size: 1em;
-     width: 196px;
-     height: auto;
      background: @white-color;
-     -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-     margin-right: 20px!important;
+     -moz-box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+     -webkit-box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+     box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+     padding: 20px!important;
+     border-radius: unset!important;
+     color: @default-color!important;
+     font-size: 16px;
+     position: relative;
      .breakpoint-small-down({
       margin: 20px auto!important;
      });
@@ -30,33 +33,31 @@
       display: none;
     }
     .position{
-      font-size: 16px;
-      color: @default-color;
-      font-size: 20px;
-      line-height: 32px;
-      font-weight: 600;
-      padding: 0!important;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      color: #3A2A15;
+      background: #F5F5F5;
+      font-size: 12px;
+      padding: 3px 10px!important;
     }
     .email{
-      padding: 20px 0!important;
-      font-size: 16px;
-      text-decoration: underline;
     }
   }
 }
 
 
 .card.profile {
-    width: 30% !important;
     padding: 20px !important;
+  text-align: center;
 
     .breakpoint-small-down({
       width: 100% !important;
       margin-bottom: 20px;
     });
     .card-img-top {
-        margin: 0 0 1rem 0!important;
-        width: 50%;
+      border-radius: unset!important;
+        //margin: 0 0 1rem 0!important;
     }
 }
 
@@ -69,12 +70,11 @@
 }
 
 .card.profile .card-header {
-    font-weight: bold;
-    text-align: left !important;
     color: @default-color;
     font-size: 20px;
     line-height: 32px;
     font-weight: 600;
+    margin: 20px auto 10px auto;
 }
 
 .contact_info h3{
@@ -82,7 +82,6 @@
 }
 
 .coordinator_image img{
-  border-radius: 50%;
   width: 100%;
 }
 

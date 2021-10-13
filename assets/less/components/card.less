@@ -4,41 +4,46 @@
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
 }
-.media-center, .logo, .flyer, .newsletters{
+
+.card-container-top{
+  background: url('../../assets/images/pattern-short.svg') bottom left repeat-x;
+  height: 38px;
+  margin-top: 40px;
+}
+
+.media-center, .logo, .flyer, .newsletters, .videos, .press-releases{
+  .card_title{
+    text-align: center;
+  }
+  .btn.btn-primary{
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    padding: 5px 0px;
+    font-size: 0.9em;
+  }
+  .col-xs{
+    max-width: 284px;
+  }
   .card-container {
-    border: none;
-    border-radius: 5px;
-    padding: 20px!important;
-    margin: 20px 0!important;
-    font-size: 1em;
-    width: 196px;
-    height: auto;
     background: @white-color;
-    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+    padding: 20px!important;
+
+    color: @default-color!important;
+    font-size: 16px;
+    position: relative;
     .breakpoint-small-down({
       margin: 20px auto!important;
     });
   }
 }
 
-.videos, .press-releases{
-  .card-container {
-    border: none;
-    border-radius: 5px;
-    padding: 20px!important;
-    margin: 20px 0!important;
-    font-size: 1em;
-    width: 570px;
-    height: fit-content;
-    background: @white-color;
-    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    .breakpoint-small-down({
-      width: auto;
-    });
+.press-releases{
+  .col-xs{
+    max-width: 100%;
   }
 }
 

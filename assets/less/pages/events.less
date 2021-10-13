@@ -67,8 +67,8 @@
 }
 
 .fc-event{
-  background: #A087BE!important;
-  border-color: #A087BE!important;
+  background: #3A2A15!important;
+  border-color: #3A2A15!important;
   padding: 10px!important;
 }
 
@@ -96,24 +96,27 @@
 .fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody, .fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-content, .fc-unthemed .fc-popover, .fc-unthemed .fc-list-view, .fc-unthemed .fc-list-heading td{
   //border: none!important;
 }
-
+.calendar-top{
+  background: url('../../assets/images/pattern-long.svg') bottom left repeat-x;
+  height: 38px;
+  margin-top: 40px;
+}
 #calendar{
-  border: none;
-  border-radius: 5px;
-  padding: 20px!important;
-  margin: 20px 0;
-  font-size: 1em;
-  cursor: pointer;
   background: @white-color;
-  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 20px -2px rgba(0, 0, 0, 0.1);
+  padding: 20px!important;
+
+  color: @default-color!important;
+  font-size: 16px;
+  position: relative;
 }
 
 //tr:first-child > td > .fc-day-grid-event {
 //  margin-top: 18px!important;
 //  width: 98%;
-//  border-radius: 5px;
+//  
 //}
 //
 //.fc-day-number{
@@ -123,7 +126,7 @@
 
 .entry_list_item{
   border: none;
-  border-radius: 5px;
+  
   padding: 20px!important;
   margin: 20px 0 20px 20px;
   font-size: 1em;

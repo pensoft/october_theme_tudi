@@ -31,8 +31,8 @@
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
-    background: transparent;
-    color: transparent;
+    //background: transparent;
+    //color: transparent;
     top: 50%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -45,7 +45,6 @@
         outline: none;
         background: transparent;
         color: transparent;
-      background: #ededed;
       border-radius: 50px;
         &:before {
             opacity: @slick-opacity-on-hover;
@@ -58,9 +57,13 @@
 
 .slick-prev{
   padding: 10px 13px 10px 7px;
+  background: url("../../assets/images/arrow-left.svg") left center no-repeat!important;
+  background-size: cover;
 }
 .slick-next{
   padding: 10px 7px 10px 13px;
+  background: url("../../assets/images/arrow-right.svg") right center no-repeat!important;
+  background-size: cover;
 }
 
 .slick-prev:before, .slick-next:before {

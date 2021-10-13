@@ -7,11 +7,12 @@ seo_keywords = "keywords"
 robot_index = "index"
 robot_follow = "follow"
 
-[jumbotron aboutContext]
-jumbotron = "about"
+[jumbotron about]
+jumbotron = "about-us"
 title = 1
 background = "transperant"
 templates = "template1"
+description_limit = 0
 
 [accordion]
 maxItems = 10
@@ -23,12 +24,25 @@ heightStyle = "content"
 iconsHeader = "ui-icon-blank"
 iconsHeaderActive = "ui-icon-blank"
 templates = "template3"
+
+[jumbotron about2]
+jumbotron = "specific-objectives"
+title = 1
+background = "#BDE1CA"
+templates = "template1"
+description_limit = 0
 ==
-{% component 'aboutContext' %}
+{% component 'about' %}
 
-
-<div class="work_packages">
-    <div class="container">
-        {% component 'accordion' %}
-    </div>
+<div class="timeline-background-top"></div>
+<div class="sub-about">
+	{% component 'about2' %}
+</div>
+<div class="timeline-background-bottom"></div>
+<div class="sub-about">
+	<div class="work_packages">
+		<div class="container">
+			{% component 'accordion' %}
+		</div>
+	</div>
 </div>
