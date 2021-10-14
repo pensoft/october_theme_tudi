@@ -1,5 +1,28 @@
 
 .contact_info{
+
+  .card-profiles{
+    .col-xs{
+      flex-basis: 28%;
+      max-width: 28%;
+      .breakpoint-small-down({
+        width: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+      });
+    }
+  }
+  img{
+    width: auto!important;
+    .breakpoint-small-down({
+      max-width: 100%;
+    });
+  }
+
+  .body{
+    min-height: 385px !important;
+    margin-top: 20px;
+  }
   .card-container {
     width: 100%;
     .cards{
@@ -21,8 +44,9 @@
      color: @default-color!important;
      font-size: 16px;
      position: relative;
+
      .breakpoint-small-down({
-      margin: 20px auto!important;
+      margin: 0px auto!important;
      });
    }
 
@@ -86,10 +110,17 @@
 }
 
 .dorsal{
-  display: block;
-  cursor: pointer;
-  color: @link-color;
-  margin-top: 20px;
+  display: none;
 }
-
-.toogle-contact-paragraphs { display: none; }
+.toogle-contact-paragraphs{
+  display: block;
+}
+//
+//.dorsal{
+//  display: block;
+//  cursor: pointer;
+//  color: @link-color;
+//  margin-top: 20px;
+//}
+//
+//.toogle-contact-paragraphs { display: none; }

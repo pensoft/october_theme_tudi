@@ -132,6 +132,32 @@ ol.q {list-style-type: upper-roman; padding-left: 20px;}
   }
 
 
+  &.about {
+    /* Full height */
+    //background: url('../../assets/images/header-home-bg-new.svg');
+    background: url('../../assets/images/header-about-bg.jpg') bottom center no-repeat;
+    //background: #BDE1CA;
+    /* Full height */
+    height: 600px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    /* Center and scale the image nicely */
+    background-position: bottom center;
+    background-size: contain;
+    position: relative;
+
+    .breakpoint-small-down({
+      //background: url('../../assets/images/EU-Pollinators-Initiative-mobile.jpg');
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-size: cover;
+    });
+
+  }
+
+
   .breakpoint-large({
     &> img {
       width: 100%;
@@ -153,8 +179,8 @@ ol.q {list-style-type: upper-roman; padding-left: 20px;}
     color: @white-color!important;
   }
   h1.display-1 {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 40px!important;
+    line-height: 48px!important;
     color: @white-color!important;
   }
 }
@@ -516,8 +542,8 @@ h1.display-1{
 .container{
 
   h1.display-1{
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 57px;
+    line-height: 70px;
     margin-bottom: 50px;
     margin-top: 100px;
     text-align: center;
@@ -525,12 +551,20 @@ h1.display-1{
 
     .breakpoint-small-down({
       margin-bottom: 50px;
-      margin-top: 0px;
+      //margin-top: 0px;
     });
   }
+
+  .breakpoint-small-down({
+    padding-left: 1rem;
+    padding-right: 1rem;
+  });
 }
 .bacteria-background{
-
+  h1.display-1{
+    font-size: 40px!important;
+    line-height: 48px!important;
+  }
 }
 h2{
   font-size: 35px;

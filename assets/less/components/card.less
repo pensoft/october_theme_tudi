@@ -24,6 +24,9 @@
   }
   .col-xs{
     max-width: 284px;
+    .breakpoint-small-down({
+      min-width: 100%;
+    });
   }
   .card-container {
     background: @white-color;
@@ -36,7 +39,7 @@
     font-size: 16px;
     position: relative;
     .breakpoint-small-down({
-      margin: 20px auto!important;
+      margin: 0px auto!important;
     });
   }
 }
