@@ -79,10 +79,21 @@ ol.q {list-style-type: upper-roman; padding-left: 20px;}
     margin: 0;
 
     /* Center and scale the image nicely */
-    background-position: bottom center;
+    background-position: center -400px;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+
+
+    .breakpoint-laptop-15-down(
+    {
+      background: url('../../assets/images/homepage-visual.png');
+      background-position: center bottom!important;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    );
 
     .breakpoint-small-down({
       //background: url('../../assets/images/EU-Pollinators-Initiative-mobile.jpg');
