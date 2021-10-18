@@ -1,6 +1,6 @@
-title = "Press releases"
 url = "/media-center/press-releases"
 layout = "default"
+title = "Press releases"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
@@ -44,7 +44,7 @@ function onStart(){
 				<div class="body">{{record.description | raw}}</div>
 				<div class="row link mt-3">
 					{% for link in record.link %}
-					<div class="col-xs-12"><a href="{{link.url}}" target="_blank">{{link.text}}</a></div>
+					<div class="col-xs-12"><a href="{{link.url}}" class="btn btn-primary" target="_blank" style="display: inline; padding: 10px 20px; margin-right: 20px;">{{link.text}}</a></div>
 					{% endfor %}
 
 				</div>
