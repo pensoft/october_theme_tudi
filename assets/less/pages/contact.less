@@ -3,8 +3,8 @@
 
   .card-profiles{
     .col-xs{
-      flex-basis: 40%;
-      max-width: 40%;
+      flex-basis: 30%;
+      max-width: 30%;
       .breakpoint-small-down({
         width: 100%;
         flex-basis: 100%;
@@ -14,14 +14,18 @@
   }
   img{
     width: auto!important;
+    min-height: 290px;
     .breakpoint-small-down({
       max-width: 100%;
     });
   }
 
   .body{
-    min-height: 385px !important;
+    min-height: 540px !important;
     margin-top: 20px;
+    .breakpoint-small-down({
+      min-height: unset !important;
+    });
   }
   .card-container {
     width: 100%;
@@ -43,7 +47,6 @@
      border-radius: unset!important;
      color: @default-color!important;
      font-size: 16px;
-     position: relative;
 
      .breakpoint-small-down({
       margin: 0px auto!important;
