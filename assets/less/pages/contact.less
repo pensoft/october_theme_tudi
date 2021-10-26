@@ -21,7 +21,6 @@
   }
 
   .body{
-    min-height: 540px !important;
     margin-top: 20px;
     .breakpoint-small-down({
       min-height: unset !important;
@@ -91,8 +90,8 @@
 
 .card.profile .card-body {
     background: none !important;
-    min-height: auto !important;
     padding: 0 !important;
+    min-height: 180px;
     .font-size(0.8);
 }
 
@@ -112,18 +111,18 @@
   width: 100%;
 }
 
-.dorsal{
-  display: none;
-}
-.toogle-contact-paragraphs{
-  display: block;
-}
-//
 //.dorsal{
-//  display: block;
-//  cursor: pointer;
-//  color: @link-color;
-//  margin-top: 20px;
+//  display: none;
 //}
-//
-//.toogle-contact-paragraphs { display: none; }
+//.toogle-contact-paragraphs{
+//  display: block;
+//}
+
+.dorsal{
+  display: block;
+  cursor: pointer;
+  color: @link-color;
+  margin-top: 20px;
+}
+
+.toogle-contact-paragraphs { display: none; }

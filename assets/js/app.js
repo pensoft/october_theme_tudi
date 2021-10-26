@@ -50,8 +50,12 @@ $(document).ready(function() {
 
 
 	$('.contact_info .card-body .body').each(function(){
-		$(this).find('p').first().append('<div class="dorsal">Read more</div>');
-		$(this).find('p:not(:first)').wrapAll( "<div class='toogle-contact-paragraphs'></div>" )
+		var countParagraphs = $(this).find('p').length;
+		if(countParagraphs > 1){
+			$(this).find('p').first().append('<div class="dorsal">Read more</div>');
+			$(this).find('p:not(:first)').wrapAll( "<div class='toogle-contact-paragraphs'></div>" )
+		}
+
 	});
 
 	$('.dorsal').click(function () {
