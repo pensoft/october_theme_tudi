@@ -274,12 +274,22 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    &.content{
+      -webkit-box-align: unset;
+      -ms-flex-align: unset;
+      align-items: unset;
+    }
   }
 
   img{
     height: 167px;
     width: 100%;
     object-fit: cover;
+    &.content.right-align{
+      height: auto;
+      width: 100%;
+      object-fit: unset;
+    }
     .breakpoint-small-down({
       width: 100%;
     });
