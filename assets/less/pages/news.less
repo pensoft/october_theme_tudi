@@ -257,9 +257,9 @@
 
   .pr.big{
     font-size: 32px!important;
-    line-height: 46px;
+    //line-height: 46px;
     padding: 0!important;
-    margin: 0!important;
+    margin: 0 0 0 10px!important;
     color: #412e19;
     float: right;
   }
@@ -271,9 +271,15 @@
 
   .row{
     margin-top: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
   img{
+    height: 167px;
+    width: 100%;
+    object-fit: cover;
     .breakpoint-small-down({
       width: 100%;
     });
