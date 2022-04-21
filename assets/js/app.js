@@ -48,8 +48,7 @@ $(document).ready(function() {
 
 	$('.nav.nav-pills').removeAttr('id');
 
-
-	$('.contact_info .card-body .body').each(function(){
+	$('.contact_info .card-body .body, .press-releases .card-container .body').each(function(){
 		var countParagraphs = $(this).find('p').length;
 		if(countParagraphs > 1){
 			$(this).find('p').first().append('<div class="dorsal">Read more</div>');

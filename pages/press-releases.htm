@@ -44,7 +44,7 @@ function onStart(){
 				<div class="body">{{record.description | raw}}</div>
 				<div class="row link mt-3">
 					{% for link in record.link %}
-					<div class="col-xs-12"><a href="{{link.url}}" class="btn btn-primary" target="_blank" style="display: inline; padding: 10px 20px; margin-right: 20px;">{{link.text}}</a></div>
+					<div class="col-xs-3"><a href="{{link.url}}" class="btn btn-primary" target="_blank" style="display: inline; padding: 10px 20px; margin-right: 20px;">{{link.text}}</a></div>
 					{% endfor %}
 
 				</div>
