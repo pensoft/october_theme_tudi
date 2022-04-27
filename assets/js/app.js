@@ -103,10 +103,12 @@ $(document).ready(function() {
 	}
 
 	var span = document.getElementsByClassName("close_modal")[0];
-
-	span.onclick = function() {
-		modal.style.display = "none";
+	if(span){
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
 	}
+
 
 
 });

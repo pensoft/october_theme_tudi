@@ -19,7 +19,7 @@ pageNumber = "{{ :page }}"
 use Pensoft\Media\Models\Pressreleases;
 
 function onStart(){
-	$this['mediaPressreleasesList'] =  Pressreleases::get();
+	$this['mediaPressreleasesList'] =  Pressreleases::orderBy('date', 'desc')->get();
 }
 ?>
 ==
@@ -41,7 +41,7 @@ function onStart(){
 			<div class="card-container-top"></div>
 			<div class="card-container">
 				<span class="card_title">{{record.name}}, {{record.date |date('F Y')}}</span>
-				<div class="body">{{record.description | raw}}</div>
+				<div class="body" style="min-height: 220px!important;">{{record.description | raw}}</div>
 				<div class="row link mt-3">
 					{% for link in record.link %}
 					<div class="col-xs-3"><a href="{{link.url}}" class="btn btn-primary" target="_blank" style="display: inline; padding: 10px 20px; margin-right: 20px;">{{link.text}}</a></div>
