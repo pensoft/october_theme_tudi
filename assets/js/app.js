@@ -48,7 +48,7 @@ $(document).ready(function() {
 
 	$('.nav.nav-pills').removeAttr('id');
 
-	$('.contact_info .card-body .body, .press-releases .card-container .body').each(function(){
+	$('.contact_info .card-body .body, .press-releases .card-container .body, .partners .card-profile .body').each(function(){
 		var countParagraphs = $(this).find('p').length;
 		if(countParagraphs > 1){
 			$(this).find('p').first().append('<div class="dorsal">Read more</div>');
@@ -164,12 +164,30 @@ function isBreakpointLarge() {
     return window.innerWidth <= 991;
 }
 
+
+function onPartners(pCode) {
+    $.request('onPartners', {
+        update: { 'components/partners_list': '#mycomponentpartners',
+        },
+        data: {
+            code: pCode
+        },
+    }).then(response => {
+        $('html, body').animate({
+            scrollTop: $("#mycomponentpartners").offset().top - 100
+        }, 1000);
+        var tooltip = document.getElementById("tooltip");
+        tooltip.classList.remove("active");
+    });
+}
+
+
 function init() {
     window.addEventListener('resize', function () {
         if (isBreakpointLarge()) {
             $('#card-carousel').slick('unslick');
         } else {
-            if (typeof cardCarousel === 'function') { 
+            if (typeof cardCarousel === 'function') {
                 cardCarousel({
                     slidesToShow: 4,
                     slidesToScroll: 4,
@@ -185,7 +203,7 @@ function init() {
     });
     document.addEventListener('DOMContentLoaded', function () {
         if (!isBreakpointLarge()) {
-            if (typeof cardCarousel === 'function') { 
+            if (typeof cardCarousel === 'function') {
                 cardCarousel({
                     slidesToShow: 4,
                     slidesToScroll: 4,

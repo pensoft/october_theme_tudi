@@ -5,24 +5,76 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
-[PartnersPage]
-limit = 0
-templates = "template6"
+[profile_records]
+show-category-title = 1
+category = 1
+maxItems = 10
+
+
+==
+<?php
+use Pensoft\Partners\Models\Partners;
+use Pensoft\Cardprofiles\Models\Profiles;
+use RainLab\Location\Models\Country;
+
+function onStart(){
+	$this['partners'] =  Partners::where('type', 1)->get();
+	$this['enabled_countries'] =  Country::where('is_enabled', true)->get()->pluck('name', 'code');
+    $this['insider_members'] = new class {
+        public function getIM($id) {
+            return Profiles::where('partner_id', $id)->where('category_id', 2)->get();
+        }
+    };
+}
+
+function onPartners(){
+    $this['partners'] = [];
+    if(post('code')){
+        $this['partners'] =  Partners::whereRaw('country_code ILIKE \'%'.post('code').'%\'')->where('type', 1)->get();
+    }
+    $this['insider_members'] = new class {
+        public function getIM($id) {
+            return Profiles::where('partner_id', $id)->where('category_id', 2)->get();
+        }
+    };
+}
+?>
 ==
 <div class="container">
-	<h1 class="display-1">Partners</h1>
-	<div class="row">
-		<div class="col-sm-6 col-xs-12">
-			<span class="tooltiptext" id="tooltip">Bulgaria</span>
-		</div>
-	</div>
+    <h1 class="display-1">Partners</h1>
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <span class="tooltiptext" id="tooltip">Bulgaria</span>
+        </div>
+    </div>
 
 
-<div class="container-fluid banner">
-	<div class="container partners-container">
-		{% component 'PartnersPage' %}
-	</div>
-</div>
+    <div class="container-fluid banner">
+        <div class="container partners-container">
+            <ul class="partners-countries-list">
+                {% for code, country in enabled_countries %}
+                <li>
+                    <a onclick="onPartners('{{code}}');">{{country}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    {% partial 'components/svg' available_countries=enabled_countries %}
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <div id="mycomponentpartners">
+                            {% partial 'components/partners_list' partners=partners insider_members=insider_members %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </div>
