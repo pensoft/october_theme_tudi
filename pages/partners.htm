@@ -9,8 +9,6 @@ robot_follow = "follow"
 show-category-title = 1
 category = 1
 maxItems = 10
-
-
 ==
 <?php
 use Pensoft\Partners\Models\Partners;
@@ -59,11 +57,7 @@ function onPartners(){
                 {% endfor %}
             </ul>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    {% partial 'components/svg' available_countries=enabled_countries %}
-                </div>
-            </div>
+            
 
             <div class="row">
 
