@@ -330,6 +330,16 @@ function mouseWheelEventFirefox(){
 }
 
 
+function showSearchForm(){
+    $('#layout-header').toggleClass('full-width');
+    $('#search').toggle();
+}
+
+function hideSearchForm(){
+    $('#layout-header').toggleClass('full-width');
+    $('#search').hide();
+}
+
 function init() {
     window.addEventListener('resize', function () {
         if (isBreakpointLarge()) {
