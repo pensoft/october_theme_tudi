@@ -1,6 +1,6 @@
-title = "Newsletters"
 url = "/media-center/newsletters"
 layout = "default"
+title = "Newsletters"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
@@ -66,7 +66,7 @@ return Redirect::to('/media-center/newsletters');
 			<div class="card-container-top"></div>
 			<div class="card-container">
 				<span class="card_image_container" style="background: url({{record.newsletter_image.thumb(196,196,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
-				<span class="card_title" style="min-height: 100px;">{{record.name}}, {{record.date |date('F Y')}}, {{record.file.size}}</span>
+				<span class="card_title" style="min-height: 100px;">{{record.name}}, {{record.date |date('F Y')}}</span>
 				<br><a href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}" title="{{record.name}}" class="btn btn-primary">Download</a>
 			</div>
 		</div>

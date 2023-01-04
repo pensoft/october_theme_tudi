@@ -7,15 +7,11 @@ robot_follow = "follow"
 
 [LibraryPage]
 templates = "template5"
+has_search = 0
+add_file_name = 1
 no_records_message = "TUdi publications will be available soon"
-
-[jumbotron]
-jumbotron = "library"
-background = "#f5f5f5"
-templates = "template1"
-description_limit = 0
 ==
 <div class="container">
     <h1 class="display-1">Library</h1>
-    {% component 'jumbotron' %}
+    {% component 'LibraryPage' %}
 </div>

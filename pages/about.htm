@@ -37,6 +37,12 @@ jumbotron = "tractor"
 background = "transperant"
 templates = "template1"
 description_limit = 0
+
+[jumbotron]
+jumbotron = "library"
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'about' %}
 
@@ -54,4 +60,8 @@ description_limit = 0
 			{% component 'accordion' %}
 		</div>
 	</div>
+</div>
+
+<div class="container">
+   {% component 'jumbotron' %}
 </div>

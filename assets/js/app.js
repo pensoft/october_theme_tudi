@@ -17,6 +17,11 @@ var documentHasScroll = function() {
 
 
 $(document).ready(function() {
+    let isFirefox = navigator.userAgent.search("Firefox");
+    if(isFirefox > 0){
+        mouseWheelEventFirefox();
+    }
+    svgZoom();
 	/* MENU */
 	$('.navbar-nav').attr('id', 'menu'); // please don't remove this line
 	$( '<div class="calendar-top"></div>' ).insertBefore( "#calendar" );
@@ -201,6 +206,127 @@ function onPartners(pCode) {
         });
 
     });
+}
+
+
+function zoomOut(){
+    const svgImage = document.getElementById("svgImage");
+    if(svgImage){
+        var matrix = window.getComputedStyle(svgImage).transform;
+        var matrixArray = matrix.replace("matrix(", "").split(",");
+        var scaleX = parseFloat(matrixArray[0]); // convert from string to number
+        if(!scaleX){
+            scaleX = 1;
+        }else{
+            scaleX = scaleX + 0.1;
+        }
+        svgImage.style.transform = `scale(${scaleX})`;
+    }
+}
+function zoomIn(){
+    const svgImage = document.getElementById("svgImage");
+    if(svgImage){
+        var matrix = window.getComputedStyle(svgImage).transform;
+        var matrixArray = matrix.replace("matrix(", "").split(",");
+        var scaleX = parseFloat(matrixArray[0]); // convert from string to number
+        if(!scaleX){
+            scaleX = 0.9;
+        }else{
+            scaleX = scaleX - 0.1;
+        }
+        svgImage.style.transform = `scale(${scaleX})`;
+        svgImage.style.overflow = `unset`;
+    }
+}
+
+function svgZoom(){
+    const svgImage = document.getElementById("svgImage");
+    if(svgImage){
+        const svgContainer = document.getElementById("svgContainer");
+        var viewBox = {x:0,y:0,w:svgImage.clientWidth*1.5,h:svgImage.clientHeight*3.5};
+        svgImage.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
+        const svgSize = {w:svgImage.clientWidth,h:svgImage.clientHeight};
+        var isPanning = false;
+        var startPoint = {x:0,y:0};
+        var endPoint = {x:0,y:0};;
+        var scale = 1;
+
+        svgContainer.onmousewheel = function(e) {
+            e.preventDefault();
+            var w = viewBox.w;
+            var h = viewBox.h;
+            var mx = e.offsetX;//mouse x
+            var my = e.offsetY;
+            var dw = w*Math.sign(e.deltaY)*0.05;
+            var dh = h*Math.sign(e.deltaY)*0.05;
+            var dx = dw*mx/svgSize.w;
+            var dy = dh*my/svgSize.h;
+            viewBox = {x:viewBox.x-dx,y:viewBox.y-dy,w:viewBox.w+dw,h:viewBox.h+dh};
+            scale = svgSize.w/viewBox.w;
+            // zoomValue.innerText = `${Math.round(scale*100)/100}`;
+            svgImage.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
+        }
+
+
+        svgContainer.onmousedown = function(e){
+            isPanning = true;
+            startPoint = {x:e.x,y:e.y};
+        }
+
+        svgContainer.onmousemove = function(e){
+            if (isPanning){
+                endPoint = {x:e.x,y:e.y};
+                var dx = (startPoint.x - endPoint.x)/scale;
+                var dy = (startPoint.y - endPoint.y)/scale;
+                var movedViewBox = {x:viewBox.x+dx,y:viewBox.y+dy,w:viewBox.w,h:viewBox.h};
+                svgImage.setAttribute('viewBox', `${movedViewBox.x} ${movedViewBox.y} ${movedViewBox.w} ${movedViewBox.h}`);
+            }
+        }
+
+        svgContainer.onmouseup = function(e){
+            if (isPanning){
+                endPoint = {x:e.x,y:e.y};
+                var dx = (startPoint.x - endPoint.x)/scale;
+                var dy = (startPoint.y - endPoint.y)/scale;
+                viewBox = {x:viewBox.x+dx,y:viewBox.y+dy,w:viewBox.w,h:viewBox.h};
+                svgImage.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
+                isPanning = false;
+            }
+        }
+
+        svgContainer.onmouseleave = function(e){
+            isPanning = false;
+        }
+    }
+
+}
+
+
+
+
+function mouseWheelEventFirefox(){
+
+    var elem = document.getElementById('svgContainer');
+
+    var handleWheel = function (event)
+    {
+        var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
+        if(delta > 0){
+            zoomIn();
+        }else{
+            zoomOut();
+        }
+        event.preventDefault();
+    };
+
+    var addMouseWheelEventListener = function (scrollHandler){
+        if (elem.addEventListener) {
+            elem.addEventListener("DOMMouseScroll", scrollHandler, false);
+        }
+    }
+
+    addMouseWheelEventListener(handleWheel);
+
 }
 
 

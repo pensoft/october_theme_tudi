@@ -9,6 +9,12 @@ robot_follow = "follow"
 show-category-title = 1
 category = 1
 maxItems = 10
+
+[PartnersPage]
+limit = 0
+templates = "template1"
+button_name = "Insider"
+maxItems = 10
 ==
 <?php
 use Pensoft\Partners\Models\Partners;
@@ -47,8 +53,8 @@ function onPartners(){
     </div>
 
 
-    <div class="container-fluid banner">
-        <div class="container partners-container">
+    <div class="container-fluid banner" style="padding-bottom: 0;">
+        <div class="container partners-container" style="padding-bottom: 0;">
             <ul class="partners-countries-list">
                 {% for code, country in enabled_countries %}
                 <li>
@@ -56,9 +62,23 @@ function onPartners(){
                 </li>
                 {% endfor %}
             </ul>
-
-            
-
+        </div>
+    </div>
+</div>
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center-xs mb-2">
+                    <a href="javascript:void(0);" onclick="zoomOut();" class="btn btn-primary" style="padding: 0 10px;" title="zoom out">+</a>
+                    <a href="javascript:void(0);" onclick="zoomIn();" class="btn btn-primary" style="padding: 0 10px;" title="zoom in">-</a>
+                </div>
+                <div class="col-xs-12" id="svgContainer" style="overflow: hidden; height: 660px; background: #bde1ca;">
+                    {% partial 'components/svg' available_countries=enabled_countries %}
+                </div>
+            </div>
+    </div>
+<div class="container" style="padding-top: 0;">
+            <div class="container-fluid banner">
+                <div class="container partners-container">
             <div class="row">
 
                 <div class="col-xs-12">
