@@ -25,7 +25,7 @@
   .breakpoint-small-down({
     height: auto;
   });
-  
+
 
   h3{
     font-weight: bold;
@@ -50,4 +50,58 @@
     //background: #412e19 url("../../assets/images/download.svg") right center no-repeat;
     background: #412e19;
   }
+}
+
+.library .tabs{
+    margin-bottom: 40px;
+    width: 100%;
+    display: block;
+    float: left;
+    .btn-primary{
+        .breakpoint-small-down({
+            margin-bottom: 20px;
+        });
+    }
+
+    form{
+        width: fit-content;
+        float: left;
+        .breakpoint-small-down({
+            width: auto;
+            float: unset;
+            max-width: 100%;
+        });
+    }
+
+    a, button{
+        margin-right: 20px;
+        width: fit-content;
+        font-weight: bold;
+        cursor: pointer;
+        color: @yellow-color;
+        border: none;
+        background: none;
+        font-size: 18px;
+        .breakpoint-small-down({
+            margin-left: 0px;
+            width: 100%;
+            text-align: center;
+            float: left;
+            text-align: center;
+            padding: 5px 0;
+        });
+
+        &.active{
+            opacity: 0.5;
+        }
+    }
+
+}
+
+#sortSelect{
+    width: fit-content;
+}
+
+.libraryForm{
+    display: inline-block;
 }
