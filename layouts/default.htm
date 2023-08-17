@@ -24,7 +24,7 @@ theme = "light-bottom"
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% component 'SeoCmsPage' %} 
+    {% component 'SeoCmsPage' %}
     {% if this.theme.site_icon %}
     <link rel="icon" type="{{this.theme.site_icon.getContentType()}}" href="{{this.theme.site_icon.getPath()}}">
     {% endif %}
@@ -38,6 +38,11 @@ theme = "light-bottom"
     <script src="{{ 'assets/vendor/bootstrap/js/modal.js'|theme  }}"></script>
     <script type="text/javascript" src="{{ 'assets/js/slick.min.js'|theme }}"></script>
 	<script src="{{ 'assets/js/ckeditor/ckeditor.js'|theme}}"></script>
+    {% if this.page.id == 'videos' %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>    
+    {% endif %}
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -97,8 +102,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Footer -->
 	<div class="footer-bg-wrapper"></div>
     <footer id="layout-footer">
-        {% partial 'site/footer' 
-            enable_social_media=this.theme.social_media 
+        {% partial 'site/footer'
+            enable_social_media=this.theme.social_media
             enable_facebook=this.theme.facebook
             facebook_url=this.theme.facebook_url
 			enable_instagram=this.theme.instagram

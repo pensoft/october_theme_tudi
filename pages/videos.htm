@@ -14,6 +14,8 @@ noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
+
+[filter_videos]
 ==
 <?php
 use Pensoft\Media\Models\Videos;
@@ -48,57 +50,10 @@ return Redirect::to('/media-center/videos');
 ?>
 ==
 <div class="container">
-	<a href="/media-center" class="back-to"> &#10094; Back to Media center</a>
-	<h1 class="display-1">Videos</h1>
-	<div class="row">
-		{% set records = mediaVideosList %}
-		{% set displayColumn = mediaVideosList.displayColumn %}
-		{% set noRecordsMessage = mediaVideosList.noRecordsMessage %}
-		{% set detailsPage = mediaVideosList.detailsPage %}
-		{% set detailsKeyColumn = mediaVideosList.detailsKeyColumn %}
-		{% set detailsUrlParameter = mediaVideosList.detailsUrlParameter %}
-
-		{% for record in records %}
-		{# Use spaceless tag to remove spaces inside the A tag. #}
-		{% spaceless %}
-		<div class="col-md-6 col-xs-12">
-			<div class="card-container" style="max-width: 90%;
-    height: 506px;
-    margin-bottom: 20px;">
-				<p class="font-weight-bold">{{record.name}}</p>
-				{% if record.file %}
-				<video controls="" width="100%"><source src="{{record.file.path}}#t=2" type="video/mp4"></video>
-
-			
-
-				<p><a class=" btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
-
-				{% endif %}
-
-				{% if record.youtube_url %}
-				<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320"></iframe>
-
-				<p>&nbsp;</p>
-				{% endif %}
-
-				{% if record.vimeo_url %}
-				<iframe width="100%" height="320" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						src="{{record.vimeo_url}}">
-				</iframe>
-				<p>&nbsp;</p>
-				{% endif %}
-			</div>
-		</div>
-
-
-
-
-		{% endspaceless %}
-		{% else %}
-		{{ noRecordsMessage }}
-		{% endfor %}
-		<script>
-			initAccordeon('accordion-documents');
-		</script>
-	</div>
+    <a href="/media-center" class="back-to"> &#10094; Back to Media center</a>
+    <h1 class="display-1">Videos</h1>
+    <p class="video-intro">Browse our collection of multilingual videos! Choose your preferred language and dive into the world of soil health with TUdi.</p>
+    <div class="filter_videos_container">
+        {% component 'filter_videos' %}
+    </div>
 </div>
