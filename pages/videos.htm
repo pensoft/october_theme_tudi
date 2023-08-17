@@ -67,9 +67,9 @@ return Redirect::to('/media-center/videos');
     margin-bottom: 20px;">
 				<p class="font-weight-bold">{{record.name}}</p>
 				{% if record.file %}
-				<video controls="" width="100%"><source src="{{record.file.path}}" type="video/mp4"></video>
+				<video controls="" width="100%"><source src="{{record.file.path}}#t=2" type="video/mp4"></video>
 
-				<p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p>
+			
 
 				<p><a class=" btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
 
