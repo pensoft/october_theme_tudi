@@ -34,6 +34,7 @@
   }
 }
 
+/* Video properties */
 .video-intro {
   text-align: center;
   font-family: Arial;
@@ -48,10 +49,85 @@
   justify-content: center;
 }
 
-.select2-container {
-    width: 389px !important; 
+.video-image {
+  background: url("../../assets/images/video-icon.svg") no-repeat center center;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+  .breakpoint-small-down({
+    display: none;;
+  });
 }
 
+.video-header {
+  flex-grow: 1;
+  text-align: start;
+  position: relative;
+  line-height: 16px;
+  font-size: 16px;
+  margin-right: 10px;
+  width: calc(100% + 60px);
+  .breakpoint-huge-down({
+    width: 100%;
+  });
+  .breakpoint-small-down({
+    width: 85%;
+  });
+  .video-title {
+      text-align: start;
+      padding: 0px !important;
+      margin: 0px !important;
+  }
+}
+
+.filter_videos {
+  .accordion-toggle {
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      position: relative !important;
+      .breakpoint-huge-down({
+        width: 100%;
+      });
+  }
+  .minus {
+    top: 7% !important;
+  }
+  
+  .plusminus {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  .accordion-content {
+    align-items: end;
+  }
+
+  .accordion-border{
+    // min-width: 320px !important;
+    .breakpoint-large-down({
+      width: 720px !important;
+    });
+    .breakpoint-small-down({
+      width: 320px !important;
+    });
+  }
+
+}
+
+
+/* Select 2 properties */
+.select2-container {
+    width: 360px !important; 
+    .breakpoint-small-down({
+      width: 320px !important; 
+    });
+}
 .select2-container .select2-selection--single {
   height: 54px !important;
 }
@@ -65,21 +141,16 @@
 .select2-container--default .select2-selection--single .select2-selection__arrow {
   height: 54px !important;
 }
-.filter_videos{
-  padding-top: 20px;
-}
 .select2-container--default .select2-selection--single .select2-selection__rendered .country-text,
 .select2-results__opstion .country-text {
     margin-left: 5px !important;
     border: none !important;
     border-radius: 0px !important;
 }
-
 .select2-results__options{
   border: none !important;
   border-radius: 0px !important;
 }
-
 .select2-dropdown {
   border: none !important;
   border-radius: 0px !important;
@@ -91,22 +162,3 @@
   height: 54px !important;
   line-height: 54px !important;
 }
-
-// .field select {
-//   width: 389px;
-//   height: 54px;
-//   background: #FFFFFF;
-//   appearance: none;
-//   border: none;
-//   outline: none;
-//   padding-left: 60px;
-//   margin-bottom: 20px;
-//   font-size: 16px;
-//   cursor: pointer;
-//   position: relative;
-//   z-index: 1;
-// }
-
-// .field {
-//   position: relative;
-// }

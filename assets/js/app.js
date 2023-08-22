@@ -39,7 +39,7 @@ $(document).ready(function() {
 	// width100.width(innerWidth);
 
 
-	$('body').on('click', '.work_packages .accordion-toggle', function () {
+	$('body').on('click', '.work_packages .accordion-toggle, .filter_videos .accordion-toggle', function () {
 		if ($(this).next(".accordion-content").is(':visible')) {
 			$(this).next(".accordion-content").slideUp(300);
 			$(this).children(".plusminus").addClass('plus');
