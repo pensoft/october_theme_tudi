@@ -53,6 +53,13 @@ $(document).ready(function() {
 
 	$('.nav.nav-pills').removeAttr('id');
 
+    $('#menuToggle input').change(function() {
+        if ($('#search').is(':visible')) {
+            hideSearchForm();
+		}
+           
+    });
+
 	$('.contact_info .card-body .body, .press-releases .card-container .body, .partners .card-profile .body').each(function(){
 		var countParagraphs = $(this).find('p').length;
 		if(countParagraphs > 1){
@@ -228,6 +235,14 @@ function appendSignOut() {
 		var menu = $('#menuToggle');
 		menu.find('>ul').append(li);
     });
+}
+
+function appendSearchAndSocialMedia(){
+	var liSearch = '<li class="nav-item search_field"><a href=\"javascript: void(0);\" onclick=\"showSearchForm();\"></a></li>';
+	// var liSocial = '<li class="nav-item social"><a href=\"https://www.facebook.com/BiCIKLProjectH2020\" target=\"_blank\" class=\"pr p-facebook big\" target=\"_blank\"></a><a href=\"https://twitter.com/BiCIKL_H2020\" target=\"_blank\" class=\"pr p-twitter big\" target=\"_blank\"></a></li>';
+	var menu = $('#menuToggle');
+	// menu.find('>ul').append(liSearch).append(liSocial);
+	menu.find('>ul').append(liSearch);
 }
 
 // function initAccordeon(pElem) {
@@ -442,15 +457,40 @@ function mouseWheelEventFirefox(){
 }
 
 
+
 function showSearchForm(){
+    // if ($(".search").is(':visible')) {
+    // 	$('#menu').show();
+    // } else {
+    // 	$(".search").slideDown(300);
+    // 	$('#menu').hide();
+    // }
+    // $('#menu').hide();
     $('#layout-header').toggleClass('full-width');
     $('#search').toggle();
+    $('#menu li').hide();
+    $('nav a:not(.navbar-brand)').hide();
+    $('.navbar-collapse').show();
 }
 
 function hideSearchForm(){
     $('#layout-header').toggleClass('full-width');
     $('#search').hide();
+    $('#menu li').show();
+    $('nav a').show();
+    $('.navbar-collapse').hide();
 }
+
+
+// function showSearchForm(){
+//     $('#layout-header').toggleClass('full-width');
+//     $('#search').toggle();
+// }
+
+// function hideSearchForm(){
+//     $('#layout-header').toggleClass('full-width');
+//     $('#search').hide();
+// }
 
 function init() {
     window.addEventListener('resize', function () {
@@ -484,6 +524,8 @@ function init() {
                 });
             }
         }
+        appendSearchAndSocialMedia();
+		requestFormLibrary();
         // keepFooter(documentHasScroll());
 
     });
