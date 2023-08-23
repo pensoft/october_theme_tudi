@@ -262,6 +262,14 @@ function isBreakpointLarge() {
 }
 
 
+function requestFormLibrary() {
+	$('#mylibraryForm').on('click', 'a', function () {
+		var $form = $(this).closest('form');
+		$form.request();
+	})
+}
+
+
 function onPartners(pCode) {
     $.request('onPartners', {
         update: { 'components/partners_list': '#mycomponentpartners',
@@ -447,9 +455,12 @@ function mouseWheelEventFirefox(){
     };
 
     var addMouseWheelEventListener = function (scrollHandler){
-        if (elem.addEventListener) {
-            elem.addEventListener("DOMMouseScroll", scrollHandler, false);
+        if(elem){
+            if (elem.addEventListener) {
+                elem.addEventListener("DOMMouseScroll", scrollHandler, false);
+            }
         }
+       
     }
 
     addMouseWheelEventListener(handleWheel);
