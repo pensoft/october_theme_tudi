@@ -35,14 +35,14 @@ templates = "template2"
 	<div class="container">
 		<h1 class="display-1" style="margin-bottom:100px!important;">News</h1>
 		<div class="row">
-		
+
 			<div class="col-xs-12 col-md-6">
 				{% component 'article_highlights' %}
 				<p><a href="{{'news'|page}}" class="see_all_news">See all news</a></p>
 			</div>
 			<div class="col-xs-12 col-md-6 hide-in-mobile"><img src="{{'tractor.jpg'|media|resize(634, 423, {'mode': 'crop'})}}"> </div>
 		</div>
-		<div class="highlighted-news-background"></div>		
+		<div class="highlighted-news-background"></div>
 	</div>
 </div>
 <div class="timeline-background-top"></div>
@@ -69,7 +69,7 @@ templates = "template2"
 
 				<div class="subscribe-items text-center d-flex row">
 					{% if this.theme.twitter %}
-					<a href="{{this.theme.twitter_url}}" target="_blank" class="col-xs col-md-12 btn p-primary pr p-twitter large" style="line-height: 1.2em;"></a>
+					<a href="{{this.theme.twitter_url}}" target="_blank" class="col-xs col-md-12 btn p-primary pr p-twitter big" style="line-height: 1.2em;"></a>
 					{% endif %}
 					{% if this.theme.facebook %}
 					<a href="{{this.theme.facebook_url}}" target="_blank" class="col-xs col-md-12 btn pr p-primary p-facebook big"></a>
