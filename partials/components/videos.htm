@@ -9,7 +9,7 @@
 
         <p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p>
 
-        <p><a class=" btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
+        <p><a class=" btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">{{'Download' |_}}</a></p>
 
         {% endif %}
 
