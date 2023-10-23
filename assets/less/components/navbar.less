@@ -117,7 +117,12 @@
                     &:hover {
                         opacity: 0.6;
                     }
+                }
 
+                &:first-of-type a{
+                    color: transparent;
+                    background: url("../../assets/images/china-flag-icon.svg") center no-repeat;
+                    background-size: 50%;
                 }
 
                 &.active a{
@@ -320,6 +325,11 @@ div.search{
     padding: 35px 62px 0 0;
     transition-delay: 2s;
     text-align: right;
+      &:first-of-type a{
+          color: transparent;
+          background: url("../../assets/images/china-flag-icon.svg") center right no-repeat;
+          background-size: 50%;
+      }
   }
 
   #menu li a{
@@ -365,7 +375,7 @@ div.search{
             width: 100%;
             margin: 0 0 0 0;
         });
-        
+
     }
 
     .text-grey-search-btn{
@@ -451,3 +461,29 @@ div.search{
         });
     }
 }
+
+
+.lang-select {
+  select{
+    min-width: 80px;
+    max-width: 96px;
+
+    .breakpoint-small-down({
+      display: none;
+    });
+  }
+}
+.lang-select-mobile{
+  display: none;
+  .breakpoint-small-down({
+    // width: 164px;
+    display: flex !important;
+  });
+}
+// .lang-select-mobile {
+  // select{
+  //   .breakpoint-small-down({
+  //     display: flex !important;
+  //   });
+//   }
+// }

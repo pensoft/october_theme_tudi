@@ -56,7 +56,7 @@ function onStart()
 {% if is_detail_page %}
 	<div class="container-fluid">
 		<div class="container">
-			<a href="/news" class="back-to"> &#10094; Back to all News</a>
+			<a href="/news" class="back-to"> &#10094; {{ 'Back to all News' |_}}</a>
 			<div class="news-title" style="margin-top: 100px;">
 				<h1>{{article.title}}</h1>
 			</div>
@@ -64,7 +64,7 @@ function onStart()
 				<div class="col-xs-4"><span class="text-published">{{article.pretty_published_at}}</span></div>
 				<div class="col-xs end-xs">
 					{% if allow_share == 'yes' %}
-					<span class="text-published">Share on:</span>
+					<span class="text-published">{{ 'Share on' |_}}:</span>
 					{% if this.theme.twitter %}
 					<a href="https://twitter.com/intent/tweet?text={{article.title_encoded}}{{'news'|page}}" target="_blank" class="col-xs col-md-12 btn p-primary pr p-twitter big"></a>
 					{% endif %}
@@ -99,7 +99,7 @@ function onStart()
 	{% endif %}
     {% else %}
     <div class="container">
-        <h1 class="display-1">News</h1>
+        <h1 class="display-1">{{ 'News' |_}}</h1>
         <div class="row">
             <div class="col-xs">
                 {% component 'list' %}

@@ -15,7 +15,7 @@ visitPageMessage = "Visit page"
     <div class="row">
         <div class="col-xs">
 
-            <h1 class="display-1">Search results for {{ searchResults.query }}</h1>
+            <h1 class="display-1">{{'Search results for' |_}} {{ searchResults.query }}</h1>
 
             {% component 'searchResults' %}
         </div>

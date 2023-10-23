@@ -29,7 +29,7 @@
             {% endif %}
 
             {% if partner.email and __SELF__.property('templates') != 'template5' %}
-            <div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">Contact</a></div>
+            <div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">{{'Contact' |_}}</a></div>
             {% endif %}
             {% if partner.email and __SELF__.property('templates') == 'template5' %}
             <div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">{{partner.email}}</a></div>
@@ -43,7 +43,7 @@
             {% endif %}
 
             <div>
-                {% if partner.instituion_url and show_url_button %}<a href="{{partner.instituion_url}}" target="_blank" class="btn btn-primary">Visit website</a>{% endif %}
+                {% if partner.instituion_url and show_url_button %}<a href="{{partner.instituion_url}}" target="_blank" class="btn btn-primary">{{'Visit website' |_}}</a>{% endif %}
                 {% if __SELF__.property('related-profiles') and partner.cardprofiles.count %}<a href="javascript:void(0);" onclick="onInsider({{partner.id}});" class="btn btn-primary">{{__SELF__.property('button_name')}}</a>{% endif %}
             </div>
 
@@ -52,7 +52,7 @@
                 <div id="accordion-insider-members">
                     <div class="accordion-border">
                         <div class="row middle-xs accordion-toggle">
-                            <div class="col-xs start-xs"><span class="showmembers">Show members</span></div>
+                            <div class="col-xs start-xs"><span class="showmembers">{{'Show members' |_}}</span></div>
                             <div class="col-xs-2 end-xs plusminus"><span class="plus"></span></div>
                         </div>
                         <div class="accordion-content" style="display: none;">
@@ -66,12 +66,12 @@
                                         <img class="card-img-top" alt="{{ profile.names }}" src="{{ 'CMS_icons_avatar.svg'|media }}" width="290" height="290">
                                         {% endif %}
 
-                                        <h3 class="card-header">{{ profile.names }}</h3>
+                                        <h3 class="card-header">{{ profile.names}}</h3>
                                         <div class="card-body">
-                                            {% if profile.position %}<div class="position"><i class="pr normal p-position"></i>{{ profile.position }}</div>{% endif %}
+                                            {% if profile.position %}<div class="position"><i class="pr normal p-position"></i>{{ profile.position}}</div>{% endif %}
 
                                             {% if profile.email %}<div class="email"><i class="pr normal p-mail"></i><a href="mailto:{{profile.email}}">{{profile.email}}</a></div>{% endif %}
-                                            <div class="body mt-1">{{ profile.content|raw }}</div>
+                                            <div class="body mt-1">{{ profile.content|raw}}</div>
                                         </div>
                                     </div>
 
@@ -87,7 +87,7 @@
 
         </div>
         {% if __SELF__.loggedIn %}
-        <p><a class="edit-link" href="/admin/pensoft/partners/partners/update/{{partner.id}}" target="_blank">Edit</a></p>
+        <p><a class="edit-link" href="/admin/pensoft/partners/partners/update/{{partner.id}}" target="_blank">{{'Edit' |_}}</a></p>
         {% endif %}
     </div>
     {% endfor %}

@@ -49,8 +49,8 @@ function onStart(){
 ?>
 ==
 <div class="container">
-	<a href="/media-center" class="back-to"> &#10094; Back to Media center</a>
-	<h1 class="display-1">Promotional materials</h1>
+	<a href="/media-center" class="back-to"> &#10094; {{ 'Back to Media center' |_}}</a>
+	<h1 class="display-1">{{ 'Promotional materials' |_}}</h1>
 	<div class="row">
 	{% set records = mediaFlyersList %}
 	{% set displayColumn = mediaFlyersList.displayColumn %}
@@ -68,7 +68,7 @@ function onStart(){
 			<div class="card-container">
 				<span class="card_image_container" style="background: url({{record.flyer_image.thumb(196,196,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
 				<span class="card_title">{{record.name}}, {{record.file.size}}</span>
-				<br><a href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}" title="{{record.name}}" class="btn btn-primary">Download</a>
+				<br><a href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}" title="{{record.name}}" class="btn btn-primary">{{ 'Download' |_}}</a>
 			</div>
 		</div>
 

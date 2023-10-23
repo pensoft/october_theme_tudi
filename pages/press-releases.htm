@@ -24,8 +24,8 @@ function onStart(){
 ?>
 ==
 <div class="container">
-	<a href="/media-center" class="back-to">&#10094; Back to Media center</a>
-	<h1 class="display-1">Press releases</h1>
+	<a href="/media-center" class="back-to">&#10094; {{ 'Back to Media center' |_}}</a>
+	<h1 class="display-1">{{ 'Press releases' |_}}</h1>
 	<div class="row between-md">
 		{% set records = mediaPressreleasesList %}
 		{% set displayColumn = mediaPressreleasesList.displayColumn %}

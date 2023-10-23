@@ -50,9 +50,9 @@ return Redirect::to('/media-center/videos');
 ?>
 ==
 <div class="container">
-    <a href="/media-center" class="back-to"> &#10094; Back to Media center</a>
-    <h1 class="display-1">Videos</h1>
-    <p class="video-intro">Browse our collection of multilingual videos! Choose your preferred language and dive into the world of soil health with TUdi.</p>
+    <a href="/media-center" class="back-to"> &#10094; {{ 'Back to Media center' |_}}</a>
+    <h1 class="display-1">{{ 'Videos' |_}}</h1>
+    <p class="video-intro">{{ 'Browse our collection of multilingual videos! Choose your preferred language and dive into the world of soil health with TUdi.' |_}}</p>
     <div class="filter_videos_container">
         {% component 'filter_videos' %}
     </div>

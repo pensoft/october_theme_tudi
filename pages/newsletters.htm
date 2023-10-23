@@ -48,8 +48,8 @@ return Redirect::to('/media-center/newsletters');
 ?>
 ==
 <div class="container">
-	<a href="/media-center" class="back-to"> &#10094; Back to Media center</a>
-	<h1 class="display-1">Newsletters</h1>
+	<a href="/media-center" class="back-to"> &#10094; {{'Back to Media center' |_}}</a>
+	<h1 class="display-1">{{'Newsletters' |_}}</h1>
 	<div class="row">
 		{% set records = mediaNewslettersList %}
 		{% set displayColumn = mediaNewslettersList.displayColumn %}
@@ -67,7 +67,7 @@ return Redirect::to('/media-center/newsletters');
 			<div class="card-container">
 				<span class="card_image_container" style="background: url({{record.newsletter_image.thumb(196,196,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
 				<span class="card_title" style="min-height: 100px;">{{record.name}}, {{record.date |date('F Y')}}</span>
-				<br><a href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}" title="{{record.name}}" class="btn btn-primary">Download</a>
+				<br><a href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}" title="{{record.name}}" class="btn btn-primary">{{'Download' |_}}</a>
 			</div>
 		</div>
 

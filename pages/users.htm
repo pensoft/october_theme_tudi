@@ -23,7 +23,7 @@ function onStart(){
 ?>
 ==
 <div class="container">
-	<h1 class="display-1">Users</h1>
+	<h1 class="display-1">{{'Users'|_}}</h1>
 <{% component 'session' %}div class="container">
 	{% for user in users %}
 	<div class="row middle-xs userBox">
@@ -41,11 +41,11 @@ function onStart(){
 		</div>
 
 		<div class="col-xs-6 col-md-10 leftBox" style="margin-top: 20px">
-			<div>Email: <span class="email"><a href="mailto:{{ user.email }}">{{ user.email }}</a></span></div>
-			<div>Partner: <span><a href="{{user.instituion_url}}" target="_blank">{{user.instituion}}</a></span></div>
+			<div>{{'Email'|_}}: <span class="email"><a href="mailto:{{ user.email }}">{{ user.email }}</a></span></div>
+			<div>{{'Partner'|_|}}: <span><a href="{{user.instituion_url}}" target="_blank">{{user.instituion}}</a></span></div>
 		</div>
 		<div class="col-xs-12 col-md-2 end-md center-xs">
-			<a href="mailto:{{ user.email }}"><img src="{{'mail.svg'|media}}" style="width: 21px; position: relative; top: 2px;" /> Send message</a>
+			<a href="mailto:{{ user.email }}"><img src="{{'mail.svg'|media}}" style="width: 21px; position: relative; top: 2px;" /> {{'Send message' |_}}</a>
 		</div>
 	</div>
 	{% endfor %}

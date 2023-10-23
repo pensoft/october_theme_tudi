@@ -12,7 +12,7 @@
 		<div class="row middle-xs">
 			<div class="col-xs-12">
 				<div class="d-flex flex-column justify-content-start flex-lg-row mt-1 d-flex align-items-start">
-					<a target="_blank" href="{{record.file.path()}}" class="btn btn-primary no-margin">Download ({{(record.file.file_size / 1024 / 1024 )|round(2)}} MB)</a>
+					<a target="_blank" href="{{record.file.path()}}" class="btn btn-primary no-margin">{{'Download' |_}} ({{(record.file.file_size / 1024 / 1024 )|round(2)}} MB)</a>
 				</div>
 			</div>
 		</div>
@@ -24,22 +24,22 @@
 			<h3 class="card-title">{{ record.title }}</h3>
 		</div>
 		<div class="body">
-			{% partial "components/libraries-content" label="Authors:" value=record.authors %}
-			{% partial "components/libraries-content" label="Status:" value=record.status_attr %}
-			{% partial "components/libraries-content" label="Year:" value=record.year_attr %}
+			{% partial "components/libraries-content" label="Authors:"|_ value=record.authors %}
+			{% partial "components/libraries-content" label="Status:"|_ value=record.status_attr %}
+			{% partial "components/libraries-content" label="Year:"|_ value=record.year_attr %}
 
-			{% partial "components/libraries-content" label="Journal:" value=record.journal_title %}
-			{% partial "components/libraries-content" label="Proceedings:" value=record.proceedings_title %}
-			{% partial "components/libraries-content" label="Monograph:" value=record.monograph_title %}
-			{% partial "components/libraries-content" label="Deliverable number:" value=record.deliverable_title %}
-			{% partial "components/libraries-content" label="Project:" value=record.project_title %}
+			{% partial "components/libraries-content" label="Journal:"|_ value=record.journal_title %}
+			{% partial "components/libraries-content" label="Proceedings:"|_ value=record.proceedings_title %}
+			{% partial "components/libraries-content" label="Monograph:"|_ value=record.monograph_title %}
+			{% partial "components/libraries-content" label="Deliverable number:"|_ value=record.deliverable_title %}
+			{% partial "components/libraries-content" label="Project:"|_ value=record.project_title %}
 
-			{% partial "components/libraries-content" label="Volume/Issue:" value=record.volume_issue %}
-			{% partial "components/libraries-content" label="Publisher:" value=record.publisher  %}
-			{% partial "components/libraries-content" label="Place:" value=record.place  %}
-			{% partial "components/libraries-content" label="City:" value=record.city  %}
-			{% partial "components/libraries-content" label="Pages:" value=record.pages  %}
-			{% partial "components/libraries-content" label="URL/DOI:" value=record.doi is_link=true  %}
+			{% partial "components/libraries-content" label="Volume/Issue:"|_ value=record.volume_issue %}
+			{% partial "components/libraries-content" label="Publisher:"|_ value=record.publisher  %}
+			{% partial "components/libraries-content" label="Place:"|_ value=record.place  %}
+			{% partial "components/libraries-content" label="City:"|_ value=record.city  %}
+			{% partial "components/libraries-content" label="Pages:"|_ value=record.pages  %}
+			{% partial "components/libraries-content" label="URL/DOI:"|_ value=record.doi is_link=true  %}
 		</div>
 	</div>
 </div>

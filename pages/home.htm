@@ -21,11 +21,12 @@ background = "transperant"
 templates = "template1"
 description_limit = 0
 
+[localePicker]
+
 [Timeline]
 limit = 9
 upcoming = 1
 templates = "template2"
-
 [siteSearchInclude]
 ==
 {% component 'siteSearchInclude' %}
@@ -33,12 +34,11 @@ templates = "template2"
 <div class="soil-layers-wrapper"></div>
 <div class="container-fluid banner bacteria-background">
 	<div class="container">
-		<h1 class="display-1" style="margin-bottom:100px!important;">News</h1>
+		<h1 class="display-1" style="margin-bottom:100px!important;">{{'News'|_}}</h1>
 		<div class="row">
-
 			<div class="col-xs-12 col-md-6">
 				{% component 'article_highlights' %}
-				<p><a href="{{'news'|page}}" class="see_all_news">See all news</a></p>
+				<p><a href="{{'news'|page}}" class="see_all_news">{{'See all news'|_}}</a></p>
 			</div>
 			<div class="col-xs-12 col-md-6 hide-in-mobile"><img src="{{'tractor.jpg'|media|resize(634, 423, {'mode': 'crop'})}}"> </div>
 		</div>
@@ -48,18 +48,18 @@ templates = "template2"
 <div class="timeline-background-top"></div>
 <div class="container-fluid banner timeline-background">
 	<div class="container">
-		<h2 class="project_timeline">Timeline</h2>
+		<h2 class="project_timeline">{{'Timeline'|_}}</h2>
 		{% component 'Timeline' %}
 	</div>
 </div>
 <div class="timeline-background-bottom"></div>
 <div class="container">
-	<h2 class="latest_updates">Follow latest updates</h2>
+	<h2 class="latest_updates">{{'Follow latest updates'|_}}</h2>
 	<!-- subscribes -->
 	<div class="row">
 		<div class="col-sm-8 col-xs-12">
 			<div class="twitter-widget">
-			    <a class="twitter-timeline" href="https://twitter.com/Project_TUdi?ref_src=twsrc%5Etfw">Tweets by TUdi</a>
+			    <a class="twitter-timeline" href="https://twitter.com/Project_TUdi?ref_src=twsrc%5Etfw">{{'Tweets by TUdi'|_}}</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</div>
@@ -90,11 +90,11 @@ templates = "template2"
 				<div class="subscribe-items d-flex justify-content-evenly flex-column">
 
 					{%if this.theme.subscribe%}
-					<a href="{{this.theme.subscribe}}" target="_blank" class="btn btn-primary" style="padding: 0!important;">Subscribe for our newsletter</a>
+					<a href="{{this.theme.subscribe}}" target="_blank" class="btn btn-primary" style="padding: 0!important;">{{'Subscribe for our newsletter'|_}}</a>
 					{%endif%}
 
 					{%if this.theme.feedback%}
-					<a href="mailto:{{this.theme.feedback}}" class="btn btn-primary">Feedback</a>
+					<a href="mailto:{{this.theme.feedback}}" class="btn btn-primary">{{'Feedback'|_}}</a>
 					{%endif%}
 				</div>
 			</div>

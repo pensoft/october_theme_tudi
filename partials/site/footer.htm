@@ -8,28 +8,28 @@
 				<img style="height:50px; margin: 18px 0; width: auto" src="{{ footer_funds_flag }}"/><br>
 				{% endif %}
 				{% if footer_funds_text %}
-				<span class="align-items-center mt-md-0 mt-1">{{footer_funds_text}}</span>
+				<span class="align-items-center mt-md-0 mt-1">{{footer_funds_text|_}}</span>
 				{%endif %}
 			{% endif %}
 		</div>
 		<div class="col-xs-6 col-md-1">
 			<ul>
-				<li><a href="{{'about'|page}}">About</a></li>
-				<li><a href="{{'partners'|page}}">Partners</a></li>
-				<li><a href="{{'library'|page}}">Library</a></li>
-				<li><a href="{{'news'|page}}">News</a></li>
+				<li><a href="{{'about'|page}}">{{'About' |_}}</a></li>
+				<li><a href="{{'partners'|page}}">{{'Partners' |_}}</a></li>
+				<li><a href="{{'library'|page}}">{{'Library' |_}}</a></li>
+				<li><a href="{{'news'|page}}">{{'News' |_}}</a></li>
 			</ul>
 		</div>
 		<div class="col-xs-6 col-md-1">
 			<ul>
-				<li><a href="{{'events'|page}}">Events</a></li>
-				<li><a href="{{'media-center'|page}}">Media center</a></li>
-				<li><a href="{{'contact'|page}}">Contacts</a></li>
+				<li><a href="{{'events'|page}}">{{'Events' |_}}</a></li>
+				<li><a href="{{'media-center'|page}}">{{'Media center' |_}}</a></li>
+				<li><a href="{{'contact'|page}}">{{'Contacts' |_}}</a></li>
 			</ul>
 		</div>
 		<div class="col-xs-12 col-md-1">
 			<ul>
-				<li><a href="{{'privacy-policy'|page}}">Privacy policy</a></li>
+				<li><a href="{{'privacy-policy'|page}}">{{'Privacy policy' |_}}</a></li>
 
 			{% if (enable_social_media) %}
 			<li><div class="social-networks px-1 col-md-2 col-xs-12">
@@ -59,9 +59,9 @@
 		</div>
 		<div class="col-xs-12 col-md-2">
 			{%if this.theme.subscribe%}
-			Join our Newsletter:<br>
-			<a href="{{this.theme.subscribe}}" target="_blank" class="btn btn-primary">Subscribe now</a><br>
-			<span>By subscribing you agree to our <u><a href="/privacy-policy">Privacy policy</a></u>. You can unsubscribe at any time.</span>
+			{{'Join our Newsletter' |_}}:<br>
+			<a href="{{this.theme.subscribe}}" target="_blank" class="btn btn-primary">{{'Subscribe now' |_}}</a><br>
+			<span>{{'By subscribing you agree to our' |_}} <u><a href="/privacy-policy">{{'Privacy policy' |_}}</a></u>. {{'You can unsubscribe at any time' |_}}.</span>
 			{%endif%}
 		</div>
     </div>

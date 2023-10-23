@@ -21,7 +21,7 @@
 			{% endif %}
 
 			{% endif %}
-			<a href="{{ ''| page }}?{{queries}}&download={{file.id}}" target="_self" class="download-icon">Download</a>
+			<a href="{{ ''| page }}?{{queries}}&download={{file.id}}" target="_self" class="download-icon">{{'Download' |_}}</a>
 			{% else %}
 			<span class="folder_icon"></span>
 			{% if folder.getParent.count %}

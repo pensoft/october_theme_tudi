@@ -77,7 +77,7 @@ public function onDownloadHandler(){
 	<div class="row middle-xs between-xs">
 			{% partial 'components/search-documents-search-form' %}
 		<div class="col-xs-12">
-			<h1 class="base_heading inner-page">Search results for {{ term }}</h1>
+			<h1 class="base_heading inner-page">{{'Search results for'|_}} {{ term }}</h1>
 				{% if user %}
 					{% if foldersData or foldersData %}
 						{% for resultFolder in foldersData %}

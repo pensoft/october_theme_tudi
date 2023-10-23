@@ -5,11 +5,12 @@ listItemClasses = "nav-item"
 primaryClasses = "navbar-nav"
 secondaryClasses = "dropdown-menu"
 numberOfLevels = 2
+
 ==
 <div class="container-fluid">
 	<nav class="navbar fixed " id="headernavbar">
 		<div class="row between-xs middle-xs width100">
-			<div class="col-md-3 col-xs-10">
+			<div class="col-md-2 col-xs-6">
 				<a href="{{'home'|page}}" class="navbar-brand" style="background-image: url('{{ this.theme.site_logo.getPath() }}'); background-position: 16px 0; background-size: contain;"></a>
 			</div>
 			<div class="col-md-9 col-xs-2 end-xs end-md">
@@ -21,12 +22,9 @@ numberOfLevels = 2
 					{% component 'menu' %}
 				</div>
 				<div class="navbar-collapse collapse " id="headerNavbarNav" style="display: none;">
+
 				{% component 'menu' %}
-
-
                     <a class="pr p-search large search-btn" onclick="showSearchForm();"></a>
-
-
 
                     <div id="search" class="search" style="display: none;">
 						<div class="close-search" onclick="hideSearchForm();">X</div>
@@ -35,16 +33,16 @@ numberOfLevels = 2
                             <button class="btn btn-link pr p-search big text-grey-search-btn" type="submit"></button>
                         </form>
                     </div>
+
 			</div>
 			</div>
 		</div>
 	</nav>
 </div>
-
 {% if page_id == 'home' and tag_line %}
 <div class="header-image {{page_id}}">
-		<h1 class="underline">{{tag_line|raw}}
-			<p><a class="btn btn-primary" href="{{'about'|page}}">Read more</a></p>
+		<h1 class="underline">{{tag_line|raw|_}}
+			<p><a class="btn btn-primary" href="{{'about'|page}}">{{'Read more' |_}}</a></p>
 		</h1>
 </div>
 {% endif %}
