@@ -31,12 +31,18 @@ $(document).ready(function() {
 			divs.slice(i, i+2).wrapAll( '<div class="col-xs" />');
 		}
 
+		$('.nav-item').each(function (){
+		    if($(this).text().trim() == 'Lang'){
+                $(this).addClass('language_picker');
+            }
+        });
 
 	// var headerNavbar = $('#headerNavbar');
 	// var width100 = $('.width100');
 	// var innerWidth = $('body').innerWidth();
 	// headerNavbar.width(innerWidth);
 	// width100.width(innerWidth);
+
 
 
 	$('body').on('click', '.work_packages .accordion-toggle, .filter_videos .accordion-toggle', function () {
@@ -57,7 +63,7 @@ $(document).ready(function() {
         if ($('#search').is(':visible')) {
             hideSearchForm();
 		}
-           
+
     });
 
 	$('.contact_info .card-body .body, .press-releases .card-container .body, .partners .card-profile .body').each(function(){
@@ -460,7 +466,7 @@ function mouseWheelEventFirefox(){
                 elem.addEventListener("DOMMouseScroll", scrollHandler, false);
             }
         }
-       
+
     }
 
     addMouseWheelEventListener(handleWheel);
