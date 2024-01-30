@@ -1,0 +1,21 @@
+title = "TUdi's Database"
+layout = "default"
+url = "/tudis-database"
+
+[siteSearchInclude]
+
+[jumbotron]
+jumbotron = "tudis-database"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+{% component 'siteSearchInclude' %}
+<div class="container">
+    <div class="row">
+		<div class="col-xs-12">
+			<h1 class="display-1">{{'TUdi\'s Database' |_}}</h1>
+			{% component 'jumbotron' %}
+		</div>
+    </div>
+</div>

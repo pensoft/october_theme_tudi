@@ -14,6 +14,8 @@ no_records_message = "No records found"
 
 [related_articles]
 limit = 4
+thumb_width = 250
+thumb_height = 250
 ==
 <?php
 use Backend\Facades\BackendAuth;
@@ -66,7 +68,7 @@ function onStart()
 					{% if allow_share == 'yes' %}
 					<span class="text-published">{{ 'Share on' |_}}:</span>
 					{% if this.theme.twitter %}
-					<a href="https://twitter.com/intent/tweet?text={{article.title_encoded}}{{'news'|page}}" target="_blank" class="col-xs col-md-12 btn p-primary pr p-twitter big"></a>
+					<a href="http://twitter.com/share?text={{article.title}}&url={{page_url}}" target="_blank" class="col-xs col-md-12 btn p-primary pr p-twitter big"></a>
 					{% endif %}
 					{% if this.theme.facebook %}
 					<a href="https://www.facebook.com/sharer/sharer.php?u={{'news'|page}}&amp;src=sdkpreparse" target="_blank" class="col-xs col-md-12 btn pr p-primary p-facebook big"></a>
