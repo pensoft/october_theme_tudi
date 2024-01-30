@@ -21,7 +21,20 @@ numberOfLevels = 2
 					<span></span>
 					{% component 'menu' %}
 				</div>
+                <div id="google_translate_element"></div>
+
+                <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+                <script>
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    }
+                </script>
 				<div class="navbar-collapse collapse " id="headerNavbarNav" style="display: none;">
+
+
+
+
 
 				{% component 'menu' %}
                     <a class="pr p-search large search-btn" onclick="showSearchForm();"></a>
