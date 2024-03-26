@@ -67,7 +67,20 @@ return Redirect::to('/media-center/newsletters');
 			<div class="card-container">
 				<span class="card_image_container" style="background: url({{record.newsletter_image.thumb(196,196,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
 				<span class="card_title" style="min-height: 100px;">{{record.name}}, {{record.date |date('F Y')}}</span>
-				<br><a href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}" title="{{record.name}}" class="btn btn-primary">{{'Download' |_}}</a>
+				{% if record.file_lang_versions %}
+				<div class="row lang_versions_btn">
+					<div class="col-xs-12 center-xs mb-1">
+						{{'Download' |_}}:
+					</div>
+					{% for language_item in record.file_lang_versions %}
+					<div class="col-xs-12 newsletter-buttons">
+						<a href="{{ ''| page }}?{{queries}}&download={{language_item.id}}&file_name={{language_item.file_name|replace({' ': '_'})}}" title="{{language_item.file_name|replace({' ': '_'})}}" class="btn btn-primary">{{language_item.description}}</a>
+					</div>
+					{% endfor %}
+				</div>
+				{% else %}
+					<a href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.file.file_name|replace({' ': '_'})}}" title="{{record.name}}" class="btn btn-primary">{{'Download' |_}}</a>
+				{% endif %}
 			</div>
 		</div>
 
