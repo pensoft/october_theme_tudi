@@ -56,12 +56,12 @@ return Redirect::to('/media-center/presentation');
     {% set detailsPage = PresentationsList.detailsPage %}
     {% set detailsKeyColumn = PresentationsList.detailsKeyColumn %}
     {% set detailsUrlParameter = PresentationsList.detailsUrlParameter %}
-
+    <div class="row">
     {% for record in records %}
     {# Use spaceless tag to remove spaces inside the A tag. #}
     {% spaceless %}
     {% if record.presentation_image %}
-    <div class="col-xs">
+    <div class="col-md-3 col-xs-12">
         <div class="card-container-top"></div>
         <div class="card-container">
             <span class="card_image_container" style="background: url({{record.presentation_image.thumb(196,196,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
@@ -89,4 +89,5 @@ return Redirect::to('/media-center/presentation');
     {% else %}
     {{ noRecordsMessage }}
     {% endfor %}
+    </div>
 </div>
