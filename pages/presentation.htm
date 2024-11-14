@@ -64,16 +64,12 @@ return Redirect::to('/media-center/presentation');
     <div class="col-md-3 col-xs-12">
         <div class="card-container-top"></div>
         <div class="card-container">
-            <span class="card_image_container" style="background: url({{record.presentation_image.thumb(196,196,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
-            <span class="card_title">{{record.name}}</span>
+            <span class="card_image_container" style="background: url({{record.presentation_image.thumb(223,234,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
             {% if record.file_lang_versions %}
             <div class="row lang_versions_btn">
-                <div class="col-xs-12 center-xs mb-1">
-                    {{'Download' |_}}:
-                </div>
-                {% for language_item in record.file_lang_versions %}
-                <div class="col-xs-12 newsletter-buttons">
-                    <a href="{{ ''| page }}?{{queries}}&download={{language_item.id}}&file_name={{language_item.file_name|replace({' ': '_'})}}" title="{{language_item.file_name|replace({' ': '_'})}}" class="btn btn-primary">{{language_item.description}}</a>
+                {% for k, language_item in record.file_lang_versions %}
+                <div class="col-xs-12 newsletter-buttons {% if k>0 %} hidden_btn {% endif %}">
+                    <a href="{{ ''| page }}?{{queries}}&download={{language_item.id}}&file_name={{language_item.file_name|replace({' ': '_'})}}" title="{{language_item.file_name|replace({' ': '_'})}}" class="btn btn-primary">{{language_item.description}} <i class="pr p-download"></i> </a>
                 </div>
                 {% endfor %}
             </div>

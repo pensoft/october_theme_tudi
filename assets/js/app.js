@@ -89,6 +89,25 @@ $(document).ready(function() {
 	});
 
 
+	$('.lang_versions_btn .hidden_btn').wrapAll('<div class="expand_buttons"></div>');
+	$('<a href="javascript:void(0);" class="more_languages">More languages <i></i></a>').insertAfter('.expand_buttons');
+
+
+    $('.more_languages').click(function () {
+        var link = $(this);
+        link.parent().find('.expand_buttons').slideToggle('slow', function() {
+            if ($(this).is(':visible')) {
+                link.addClass('expaned');
+                link.html('Less languages <i></i>');
+            } else {
+                link.removeClass('expaned');
+                link.html('More languages <i></i>');
+            }
+        });
+
+    });
+
+
 	$('.content-wrapper.news .content img').each(function(){
 		$(this).attr('id', 'myImg');
 		$(this).addClass('myImages');
