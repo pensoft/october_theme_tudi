@@ -89,7 +89,7 @@ $(document).ready(function() {
 	});
 
 
-    $('.lang_versions_btn').each(function (){
+    $('.col-md-3 .lang_versions_btn').each(function (){
         $(this).find('.hidden_btn').wrapAll('<div class="expand_buttons"></div>');
     });
 	// $('.lang_versions_btn .hidden_btn').wrapAll('<div class="expand_buttons"></div>');
