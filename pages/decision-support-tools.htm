@@ -1,0 +1,23 @@
+title = "Decision Support Tools"
+layout = "default"
+url = "/decision-support-tools"
+
+[siteSearchInclude]
+
+[jumbotron]
+jumbotron = "decision-support-tool"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+{% component 'siteSearchInclude' %}
+<div class="container-fluid decision-support-tools">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="display-1">{{'Decision Support Tools' |_}}</h1>
+                {% component 'jumbotron' %}
+            </div>
+        </div>
+    </div>
+</div>
