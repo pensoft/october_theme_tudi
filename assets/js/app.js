@@ -70,7 +70,7 @@ $(document).ready(function() {
 		var countParagraphs = $(this).find('p').length;
 		if(countParagraphs > 1){
 			$(this).find('p').first().append('<div class="dorsal">Read more</div>');
-			$(this).find('p:not(:first)').wrapAll( "<div class='toogle-contact-paragraphs'></div>" )
+			$(this).find('p:not(:first), ul').wrapAll( "<div class='toogle-contact-paragraphs'></div>" )
 		}
 
 	});
