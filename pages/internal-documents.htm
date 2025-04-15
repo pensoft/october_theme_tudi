@@ -24,7 +24,7 @@ if(get('download')){
 $file = File::find((int)get('download'));
 $file_name = $file->getLocalPath();
 $ext= $file->getExtension();
-$recordName = $file->file_name ? $file->file_name : 'PROMICON_file.'.$ext;
+$recordName = $file->file_name ? $file->file_name : 'TUDI_file.'.$ext;
 
 
 if (file_exists($file_name)) {

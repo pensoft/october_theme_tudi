@@ -12,6 +12,7 @@ use Pensoft\Media\Models\Newsletters;
 use Pensoft\Media\Models\Presentations;
 use Pensoft\Media\Models\Pressreleases;
 use Pensoft\Media\Models\Videos;
+use Pensoft\Media\Models\Documents;
 
 function onStart(){
 	$this['logos'] =  MediaLogos::get();
@@ -20,6 +21,7 @@ function onStart(){
 	$this['presentations'] =  Presentations::get();
 	$this['pressreleases'] =  Pressreleases::get();
 	$this['videos'] =  Videos::get();
+	$this['documents'] =  Documents::get();
 }
 ?>
 ==
@@ -71,7 +73,7 @@ function onStart(){
 		<div class="col-xs">
 			<div class="card-container-top"></div>
 			<div class="card-container">
-				<span class="card_image_container" style="background: url({{'pensoft/icons-pr.svg'|media}}) center center no-repeat; background-size: cover;" href="{{url('media-center')}}/logo" title="Logo"></span>
+				<span class="card_image_container" style="background: url({{'pensoft/icons-pr.svg'|media}}) center center no-repeat; background-size: cover;" href="{{url('media-center')}}/press-releases" title="Press releases"></span>
 				<span class="card_title">{{'Press releases' |_}}</span>
 				<a href="{{url('media-center')}}/press-releases" title="Press releases" class="btn btn-primary">{{'Browse' |_}}</a>
 			</div>
@@ -81,12 +83,23 @@ function onStart(){
 		<div class="col-xs">
 			<div class="card-container-top"></div>
 			<div class="card-container">
-				<span class="card_image_container" style="background: url({{'pensoft/videos.svg'|media}}) center center no-repeat; background-size: 110px; " href="{{url('media-center')}}/logo" title="Logo"></span>
+				<span class="card_image_container" style="background: url({{'pensoft/videos.svg'|media}}) center center no-repeat; background-size: 110px; " href="{{url('media-center')}}/videos" title="Videos"></span>
 				<span class="card_title">{{'Videos' |_}}</span>
 				<a href="{{url('media-center')}}/videos" title="Videos" class="btn btn-primary">{{'Browse files' |_}}</a>
 			</div>
 		</div>
 		{% endif %}
+
+        {% if documents.count() %}
+        <div class="col-xs">
+            <div class="card-container-top"></div>
+            <div class="card-container">
+                <span class="card_image_container" style="background: url({{'pensoft/catalogue.svg'|media}}) center center no-repeat; background-size: 110px; " href="{{url('media-center')}}/catalogue" title="Catalogue of soil restoration and fertilisation strategies"></span>
+                <span class="card_title">{{'Catalogue' |_}}</span>
+                <a href="{{url('media-center')}}/catalogue" title="Catalogue of soil restoration and fertilisation strategies" class="btn btn-primary">{{'Browse files' |_}}</a>
+            </div>
+        </div>
+        {% endif %}
 
     </div>
 	<p>&nbsp;</p>
