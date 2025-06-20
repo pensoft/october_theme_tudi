@@ -30,6 +30,55 @@ templates = "template2"
 {% component 'siteSearchInclude' %}
 <div class="soil-layers">{% component 'jumbotron' %}</div>
 <div class="soil-layers-wrapper"></div>
+
+
+
+<div class="container">
+    <h2 class="latest_updates"><b>{{'Project outcomes and tools'|_}}</b></h2>
+    <div class="row pot between-md around-xs">
+        <div class="col-md-3 col-xs-12 center-xs">
+            <div class="pot_item">
+                <div>
+                    <h3>{{'MULTINGUAL LEAFLETS'|_}}</h3>
+                    <div class="pot_text">
+                        Multilingual leaflets provide guidance on managing soil health in eight different languages
+                    </div>
+                </div>
+                <a class="btn btn-primary" href="/media-center/multilingual-leaflets">Find out more</a>
+
+            </div>
+        </div>
+
+        <div class="col-md-3 col-xs-12 center-xs">
+            <div class="pot_item">
+                <div>
+                    <h3>{{'DSTs'|_}}</h3>
+                    <div class="pot_text">
+                        The Decision Support Tools are available online to assist farmers by identifying potential soil health issues, recommending appropriate agricultural practices for improvement in cases of degradation or risk, and supporting the ongoing monitoring of soil health over time.
+                    </div>
+                </div>
+                <a class="btn btn-primary" href="{{'decision-support-tools'|page}}">Find out more</a>
+
+            </div>
+        </div>
+
+        <div class="col-md-3 col-xs-12 center-xs">
+            <div class="pot_item">
+                <div>
+                    <h3>{{'SEST'|_}}</h3>
+                    <div class="pot_text">
+                        The Socio-Economic Toolkit to Support Soil Restoration is designed to meet farmers’ needs by providing in-depth economic analysis, helping them make informed decisions through assessments of the financial impact of soil restoration strategies and advanced fertilisation practices.
+                    </div>
+                </div>
+                <a class="btn btn-primary" href="{{'socio-economic-soil-restoring-digital-supporting-toolkit-sest'|page}}">Find out more</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="container-fluid banner bacteria-background">
 	<div class="container">
 		<h1 class="display-1" style="margin-bottom:100px!important;">{{'News'|_}}</h1>
@@ -43,14 +92,14 @@ templates = "template2"
 		<div class="highlighted-news-background"></div>
 	</div>
 </div>
-<div class="timeline-background-top"></div>
-<div class="container-fluid banner timeline-background">
-	<div class="container">
-		<h2 class="project_timeline">{{'Timeline'|_}}</h2>
-		{% component 'Timeline' %}
-	</div>
-</div>
-<div class="timeline-background-bottom"></div>
+<!--<div class="timeline-background-top"></div>-->
+<!--<div class="container-fluid banner timeline-background">-->
+<!--	<div class="container">-->
+<!--		<h2 class="project_timeline">{{'Timeline'|_}}</h2>-->
+<!--		{% component 'Timeline' %}-->
+<!--	</div>-->
+<!--</div>-->
+<!--<div class="timeline-background-bottom"></div>-->
 <div class="container">
 	<h2 class="latest_updates">{{'Follow latest updates'|_}}</h2>
 	<!-- subscribes -->

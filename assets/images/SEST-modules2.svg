@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="640 141 410 367" style="enable-background:new 640 141 410 367;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#864B18;}
+	.st1{fill:#9BCCC7;}
+	.st2{fill:#A1A333;}
+	.st3{fill:#A17C28;}
+	.st4{fill:#FFFFFF;}
+	.st5{font-family:'ArialMT';}
+	.st6{font-size:14px;}
+	.st7{font-family:'Arial-BoldMT';}
+	.st8{font-size:18px;}
+</style>
+<g id="Group_2334" transform="translate(-127 -430)">
+	<rect id="Rectangle_1175" x="418" y="571" class="st0" width="328" height="367"/>
+	<rect id="Rectangle_1178" x="418" y="960" class="st1" width="1111" height="108"/>
+	<rect id="Rectangle_1176" x="767" y="571" class="st2" width="410" height="367"/>
+	<rect id="Rectangle_1177" x="1197" y="571" class="st3" width="333" height="367"/>
+	<text transform="matrix(1 0 0 1 441 644)" class="st4 st5 st6">Calculates the gross margin for each crop per </text>
+	<text transform="matrix(1 0 0 1 441 663)" class="st4 st5 st6">hectare for base and alternative soil </text>
+	<text transform="matrix(1 0 0 1 441 682)" class="st4 st5 st6">restoration strategies. Also, it calculates the </text>
+	<text transform="matrix(1 0 0 1 441 701)" class="st4 st5 st6">break-even point – the point in which the </text>
+	<text transform="matrix(1 0 0 1 441 720)" class="st4 st5 st6">income covers the cost, and the profit is zero. </text>
+	<text transform="matrix(1 0 0 1 441 739)" class="st4 st5 st6">The break-even point could be calculated for </text>
+	<text transform="matrix(1 0 0 1 441 758)" class="st4 st5 st6">each of the base and alternative soil </text>
+	<text transform="matrix(1 0 0 1 441 777)" class="st4 st5 st6">restoration strategies. Regarding the break-</text>
+	<text transform="matrix(1 0 0 1 441 796)" class="st4 st5 st6">even point calculation, it was applied </text>
+	<text transform="matrix(1 0 0 1 441 815)" class="st4 st5 st6">simplified approachfor estimation of soil </text>
+	<text transform="matrix(1 0 0 1 441 834)" class="st4 st5 st6">restoration technologies efficiency.</text>
+	<text transform="matrix(1 0 0 1 441 872)" class="st4 st5 st6">.</text>
+	<text transform="matrix(1 0 0 1 792 644)" class="st4 st5 st6">Calculates the partial budget and provides the ability to </text>
+	<text transform="matrix(1 0 0 1 792 663)" class="st4 st5 st6">perform a comparative analysis of the changes in revenues </text>
+	<text transform="matrix(1 0 0 1 792 682)" class="st4 st5 st6">and costs using the baseline and alternative soil </text>
+	<text transform="matrix(1 0 0 1 792 701)" class="st4 st5 st6">restoration strategies. A dynamic cost-benefit analysis can </text>
+	<text transform="matrix(1 0 0 1 792 720)" class="st4 st5 st6">also be carried out to evaluate the return on investment for </text>
+	<text transform="matrix(1 0 0 1 792 739)" class="st4 st5 st6">each alternative soil restoration strategy. Single period full </text>
+	<text transform="matrix(1 0 0 1 792 758)" class="st4 st5 st6">CBA is simplified using the payback period. Both methods </text>
+	<text transform="matrix(1 0 0 1 792 777)" class="st4 st5 st6">are commonly used by investors, financial professionals, </text>
+	<text transform="matrix(1 0 0 1 792 796)" class="st4 st5 st6">and corporations to calculate investment returns. Payback </text>
+	<text transform="matrix(1 0 0 1 792 815)" class="st4 st5 st6">Period is equal to Cost of Investment/Average Annual Cash </text>
+	<text transform="matrix(1 0 0 1 792 834)" class="st4 st5 st6">Flow.  The dynamic CBA analysis simplification includes </text>
+	<text transform="matrix(1 0 0 1 792 853)" class="st4 st5 st6">only a net present value approach. The forecast is </text>
+	<text transform="matrix(1 0 0 1 792 872)" class="st4 st5 st6">simplified to one or several crops affected by soil </text>
+	<text transform="matrix(1 0 0 1 792 891)" class="st4 st5 st6">restoration strategies for a 5-years period. The structure of </text>
+	<text transform="matrix(1 0 0 1 792 910)" class="st4 st5 st6">the crop rotation will be the same for the planning period.</text>
+	<text transform="matrix(1 0 0 1 441 989)" class="st5 st6">SEST Policy and stakeholders’ level will ensure analysis of average farm characteristics such as income, variable and fixed costs for different agriculture system – cereals, tree and </text>
+	<text transform="matrix(1 0 0 1 441 1008)" class="st5 st6">pastures. Comparison analysis between the country and regions. In line with the simplification on farm level, the LCA is fully integrated with FaST.</text>
+	<text transform="matrix(1 0 0 1 441 1046)" class="st5 st6">Users can download all calculations in excel file which allows to be applied additional analysis.</text>
+	<text transform="matrix(1 0 0 1 1221 644)" class="st4 st5 st6">Optimises profit, break-even point, and </text>
+	<text transform="matrix(1 0 0 1 1221 663)" class="st4 st5 st6">profitability to improve medium- and long-</text>
+	<text transform="matrix(1 0 0 1 1221 682)" class="st4 st5 st6">term results based on changes in average </text>
+	<text transform="matrix(1 0 0 1 1221 701)" class="st4 st5 st6">yields and crop prices. It is used sensitivity </text>
+	<text transform="matrix(1 0 0 1 1221 720)" class="st4 st5 st6">analysis for calculations. In addition, partial </text>
+	<text transform="matrix(1 0 0 1 1221 739)" class="st4 st5 st6">life cycle analysis based on information </text>
+	<text transform="matrix(1 0 0 1 1221 758)" class="st4 st5 st6">provided by FaST tool is available.</text>
+	<text transform="matrix(1 0 0 1 441 606)" class="st4 st7 st8">Management Operational Tool (MOT)</text>
+	<text transform="matrix(1 0 0 1 792 606)" class="st4 st7 st8">Cost-Benefit Analysis Tool (CBAT)</text>
+	<text transform="matrix(1 0 0 1 1221 606)" class="st4 st7 st8">Simulation Environmental Tool (SET)</text>
+</g>
+</svg>
