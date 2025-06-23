@@ -1,3 +1,16 @@
+@keyframes rotateX {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+    50% {
+        transform: rotateX(-20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
 
 .navbar {
     position: relative;
@@ -64,6 +77,38 @@
       list-style-type: none;
     }
 
+    .dropdown{
+        .dropdown-menu {
+            background: white;
+            animation: rotateX 500ms ease-in-out forwards;
+            transform-origin: top center;
+            opacity: 0;
+
+
+            &:nth-of-type(1) {
+                animation-delay: 0ms;
+            }
+            &:nth-of-type(2) {
+                animation-delay: 160ms;
+            }
+            &:nth-of-type(3) {
+                animation-delay: 320ms;
+            }
+            &:nth-of-type(4) {
+                animation-delay: 480ms;
+            }
+            &:nth-of-type(5) {
+                animation-delay: 640ms;
+            }
+            &:nth-of-type(6) {
+                animation-delay: 800ms;
+            }
+            &:nth-of-type(7) {
+                animation-delay: 960ms;
+            }
+        }
+    }
+
     .navbar-collapse {
         display: flex;
         flex-basis: 100%;
@@ -76,7 +121,6 @@
             display: flex;
             flex-basis: 100%;
             width: 100%;
-            //max-width: 737px;
             flex-grow: 1;
             padding-left: 1rem;
             //padding-right: 1rem;
@@ -136,15 +180,83 @@
 
                 background-color: inherit;
                 &.dropdown {
+                    &:hover > .dropdown-menu {
+                        display: block;
+                    }
+
+                    /* navbar arrows**/
+                    position: relative;
+                    margin-right: 20px;
+                    z-index: 2;
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        right: -2px;
+                        top: 50%;
+                        margin-top: -3px;
+                        width: 10px;
+                        height: 10px;
+                        background: url('../../assets/images/arrow-down.svg') no-repeat center center;
+                        background-size: contain;
+                        pointer-events: none;
+                        transition: transform 0.3s ease;
+                    }
+
+                    &:hover:after {
+                        transform: rotate(180deg);
+                        margin-top: -5px;
+                        opacity: 0.6;
+                    }
 
                     .dropdown-menu {
-                        position: relative;
-                        z-index: @zindex-dropdown;
-                        top: 0;
-                        background-color: inherit;
-                        display: block;
-                        padding-left: 0;
+                        display: none;
+                        position: absolute;
+                        line-height: 1.6em;
+                        padding: 0px 32px 15px 20px !important;
+                        top: 40px;
+
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            //background: transparent;
+                            width: 100%;
+                            height: 35px;
+                            top: -35px;
+                            left: 0;
+                            z-index: 1;
+                        }
+
+                        a {
+                            padding: 0 !important;
+                            text-align: left;
+                            line-height: 1.6em;
+                            letter-spacing: 0px;
+                            margin-bottom: 5px;
+                            //color: @white-color !important;
+                            display: inline-block; // Ensure the element can be transformed
+                            transform: translateX(0); // Reset any initial transform
+                            transition: transform 0.3s ease, opacity 0.3s ease;
+
+                            &:hover {
+                                opacity: 0.6;
+                                transform: translateX(5px); // Move slightly to the right on hover
+                            }
+                        }
+
+                        li{
+                            &:nth-of-type(1){
+                                a{
+                                    background: none;
+                                    color: @navbar-font-color;
+                                    &:hover{
+                                        opacity: 0.7;
+                                    }
+                                }
+                            }
+                        }
                     }
+
                 }
 
                 &.sign-in a{
@@ -208,7 +320,7 @@
                         .dropdown-menu {
                             display: none;
                             position: absolute;
-                            top: 73px;
+                            top: 63px;
                             padding-left: 0;
                             padding-top: 15px;
                         }
